@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TS.BAPLN.DataEntities.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TS.BAPLN.DataEntities.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfEstudianteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstudianteDTO" nillable="true" type="tns:EstudianteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstudianteDTO" nillable="true" type="tns:ArrayOfEstudianteDTO" />
+  <xs:complexType name="EstudianteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Carne" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha_Nacimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Nacionalidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Madre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nacionalidades" nillable="true" type="tns:ArrayOfNacionalidadDTO" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Padre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoLocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoMovil" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstudianteDTO" nillable="true" type="tns:EstudianteDTO" />
+  <xs:complexType name="ArrayOfNacionalidadDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NacionalidadDTO" nillable="true" type="tns:NacionalidadDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNacionalidadDTO" nillable="true" type="tns:ArrayOfNacionalidadDTO" />
+  <xs:complexType name="NacionalidadDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NacionalidadDTO" nillable="true" type="tns:NacionalidadDTO" />
+  <xs:complexType name="ArrayOfTipoBecaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoBecaDTO" nillable="true" type="tns:TipoBecaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoBecaDTO" nillable="true" type="tns:ArrayOfTipoBecaDTO" />
+  <xs:complexType name="TipoBecaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoBecaDTO" nillable="true" type="tns:TipoBecaDTO" />
+  <xs:complexType name="ArrayOfBecaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BecaDTO" nillable="true" type="tns:BecaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBecaDTO" nillable="true" type="tns:ArrayOfBecaDTO" />
+  <xs:complexType name="BecaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CantidadCuotas" type="xs:short" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_TipoBeca" type="xs:int" />
+      <xs:element minOccurs="0" name="MontoCuota" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MontoTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoBeca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoBecas" nillable="true" type="tns:ArrayOfTipoBecaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BecaDTO" nillable="true" type="tns:BecaDTO" />
+  <xs:complexType name="BecaEstudianteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Beca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Becas" nillable="true" type="tns:ArrayOfBecaDTO" />
+      <xs:element minOccurs="0" name="CantidadCuotas" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Estudiante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Beca" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Estudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="MontoCuota" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="estudianteList" nillable="true" type="tns:ArrayOfEstudianteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BecaEstudianteDTO" nillable="true" type="tns:BecaEstudianteDTO" />
+  <xs:complexType name="ArrayOfDonadorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DonadorDTO" nillable="true" type="tns:DonadorDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDonadorDTO" nillable="true" type="tns:ArrayOfDonadorDTO" />
+  <xs:complexType name="DonadorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Nacionalidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Periodicidad" type="xs:int" />
+      <xs:element minOccurs="0" name="MontoAporte" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nacionalidades" nillable="true" type="tns:ArrayOfNacionalidadDTO" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodicidades" nillable="true" type="tns:ArrayOfPeriodicidadDTO" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoLocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoMovil" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DonadorDTO" nillable="true" type="tns:DonadorDTO" />
+  <xs:complexType name="ArrayOfPeriodicidadDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PeriodicidadDTO" nillable="true" type="tns:PeriodicidadDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPeriodicidadDTO" nillable="true" type="tns:ArrayOfPeriodicidadDTO" />
+  <xs:complexType name="PeriodicidadDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PeriodicidadDTO" nillable="true" type="tns:PeriodicidadDTO" />
+
+  <xs:complexType name="ArrayOfInstitucionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InstitucionDTO" nillable="true" type="tns:InstitucionDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstitucionDTO" nillable="true" type="tns:ArrayOfInstitucionDTO" />
+  <xs:complexType name="InstitucionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailContacto" nillable="true" type="xs:string" />      
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstitucioDTO" nillable="true" type="tns:InstitucioDTO" />
+</xs:schema>

@@ -1,0 +1,7 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\bin\Debug\TS.BAPLN.Common.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\bin\Debug\TS.BAPLN.Common.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\bin\Debug\TS.BAPLN.DataEntities.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\bin\Debug\TS.BAPLN.DataEntities.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\obj\Debug\TS.BAPLN.Common.csprojResolveAssemblyReference.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\obj\Debug\TS.BAPLN.Common.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.Common\obj\Debug\TS.BAPLN.Common.pdb

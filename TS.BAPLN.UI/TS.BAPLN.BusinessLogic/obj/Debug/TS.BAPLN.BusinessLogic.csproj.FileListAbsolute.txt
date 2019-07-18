@@ -1,0 +1,15 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.BusinessLogic.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.BusinessLogic.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.Common.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.DataAccess.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.DataEntities.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.DataModel.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.Common.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.DataAccess.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.DataEntities.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\TS.BAPLN.DataModel.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\obj\Debug\TS.BAPLN.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\obj\Debug\TS.BAPLN.BusinessLogic.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.BusinessLogic\obj\Debug\TS.BAPLN.BusinessLogic.pdb

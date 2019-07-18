@@ -1,0 +1,5 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.UnitTest\bin\Debug\TS.BAPLN.UnitTest.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.UnitTest\bin\Debug\TS.BAPLN.UnitTest.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.UnitTest\obj\Debug\TS.BAPLN.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.UnitTest\obj\Debug\TS.BAPLN.UnitTest.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.UnitTest\obj\Debug\TS.BAPLN.UnitTest.pdb

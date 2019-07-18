@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BAPLNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CAT_Beca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_TipoBeca" Type="int" Nullable="false" />
+    <Property Name="MontoTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MontoCuota" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CantidadCuotas" Type="smallint" Nullable="false" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_CursoLectivo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="200" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Estado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nchar" MaxLength="100" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_EstadoCivil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="CAT_Materia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="250" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Nacionalidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="CAT_Nivel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="200" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_PeriodicidadPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="CAT_Periodo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="200" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Permiso">
+    <Key>
+      <PropertyRef Name="Id_Permiso" />
+    </Key>
+    <Property Name="Id_Permiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_TipoBeca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_TipoResponsable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HIS_HistorialAcademico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Estudiante" Type="int" Nullable="false" />
+    <Property Name="Id_Materia" Type="int" Nullable="false" />
+    <Property Name="Id_Periodo" Type="int" Nullable="false" />
+    <Property Name="Id_Nivel" Type="int" Nullable="false" />
+    <Property Name="Nota" Type="smallint" Nullable="false" />
+    <Property Name="Id_CursoLectivo" Type="int" Nullable="false" />
+    <Property Name="Id_Institucion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HIS_HistorialAportes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Donador" Type="int" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Anulada" Type="bit" Nullable="false" />
+    <Property Name="Aprobada" Type="bit" Nullable="false" />
+    <Property Name="UsuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LIS_AporteCuota">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Cuota" Type="int" />
+    <Property Name="Id_Aporte" Type="int" />
+  </EntityType>
+  <EntityType Name="LIS_BecaEstudiante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaFinal" Type="datetime" Nullable="false" />
+    <Property Name="Id_Estudiante" Type="int" Nullable="false" />
+    <Property Name="Id_Beca" Type="int" Nullable="false" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+    <Property Name="MontoTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MontoCuota" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CantidadCuotas" Type="smallint" />
+  </EntityType>
+  <EntityType Name="LIS_CuotasBeca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_BecaEstudiante" Type="int" />
+    <Property Name="Id_Donador" Type="int" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="Monto" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Pendiente" Type="bit" Nullable="false" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
+    <Property Name="Anulada" Type="bit" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LIS_Donador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimerApellido" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SegundoApellido" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="TelefonoLocal" Type="nvarchar" MaxLength="8" />
+    <Property Name="TelefonoMovil" Type="nvarchar" MaxLength="8" />
+    <Property Name="Id_Periodicidad" Type="int" Nullable="false" />
+    <Property Name="MontoAporte" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Id_Nacionalidad" Type="int" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LIS_Estudiante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimerApellido" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="SegundoApellido" Type="nvarchar" MaxLength="150" />
+    <Property Name="Carne" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cedula" Type="nvarchar" MaxLength="20" />
+    <Property Name="Padre" Type="nvarchar" MaxLength="500" />
+    <Property Name="Madre" Type="nvarchar" MaxLength="500" />
+    <Property Name="TelefonoLocal" Type="nvarchar" MaxLength="8" />
+    <Property Name="TelefonoMovil" Type="nvarchar" MaxLength="8" />
+    <Property Name="Fotografia" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fecha_Nacimiento" Type="datetime" />
+    <Property Name="Id_Nacionalidad" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="Id_Institucion" Type="int" />
+  </EntityType>
+  <EntityType Name="LIS_Instituciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmailContacto" Type="nvarchar" MaxLength="200" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="LIS_Responsable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrimerApellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="SegundoApellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cedula" Type="nvarchar" MaxLength="30" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaNacimiento" Type="datetime" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="400" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Trabajo" Type="nvarchar" MaxLength="100" />
+    <Property Name="IngresoMensual" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Oficio" Type="nvarchar" MaxLength="50" />
+    <Property Name="Escolaridad" Type="nchar" MaxLength="10" />
+    <Property Name="Conocimientos" Type="nvarchar" MaxLength="250" />
+    <Property Name="Id_EstadoCivil" Type="int" />
+    <Property Name="Id_Nacionalidad" Type="int" />
+    <Property Name="Id_TipoResponsable" Type="int" />
+  </EntityType>
+  <EntityType Name="LIS_Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contraseña" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Puesto" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="REL_CursoLectivo_Institucion">
+    <Key>
+      <PropertyRef Name="IdCursoLectivo" />
+      <PropertyRef Name="IdInstitucion" />
+    </Key>
+    <Property Name="IdCursoLectivo" Type="int" Nullable="false" />
+    <Property Name="IdInstitucion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REL_Estudiante_Responsable">
+    <Key>
+      <PropertyRef Name="Id_Estudiante" />
+      <PropertyRef Name="Id_Responsable" />
+    </Key>
+    <Property Name="Id_Estudiante" Type="int" Nullable="false" />
+    <Property Name="Id_Responsable" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REL_Materia_Institucion">
+    <Key>
+      <PropertyRef Name="Id_Materia" />
+      <PropertyRef Name="Id_Institucion" />
+    </Key>
+    <Property Name="Id_Materia" Type="int" Nullable="false" />
+    <Property Name="Id_Institucion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REL_Nivel_Institucion">
+    <Key>
+      <PropertyRef Name="Id_Nivel" />
+      <PropertyRef Name="Id_Institucion" />
+    </Key>
+    <Property Name="Id_Nivel" Type="int" Nullable="false" />
+    <Property Name="Id_Institucion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REL_Periodo_Institucion">
+    <Key>
+      <PropertyRef Name="Id_Periodo" />
+      <PropertyRef Name="Id_Institucion" />
+    </Key>
+    <Property Name="Id_Periodo" Type="int" Nullable="false" />
+    <Property Name="Id_Institucion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REL_Usuario_Permiso">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+      <PropertyRef Name="Id_Permiso" />
+    </Key>
+    <Property Name="Id_Usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id_Permiso" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BAPLN.dbo.vwHistorialAcademico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwHistorialAcademico">
+    <Key>
+      <PropertyRef Name="Consecutivo" />
+      <PropertyRef Name="IdEstudiante" />
+      <PropertyRef Name="idInstitucion" />
+      <PropertyRef Name="DesInstitucion" />
+      <PropertyRef Name="IdCursoLectivo" />
+      <PropertyRef Name="IdNivel" />
+      <PropertyRef Name="IdPeriodo" />
+      <PropertyRef Name="Materia" />
+      <PropertyRef Name="Calificacion" />
+    </Key>
+    <Property Name="Consecutivo" Type="int" Nullable="false" />
+    <Property Name="CarnetEstudiante" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdEstudiante" Type="int" Nullable="false" />
+    <Property Name="NombreEstudiante" Type="nvarchar" MaxLength="352" />
+    <Property Name="idInstitucion" Type="int" Nullable="false" />
+    <Property Name="DesInstitucion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="IdCursoLectivo" Type="int" Nullable="false" />
+    <Property Name="CursoLectivo" Type="nvarchar" MaxLength="200" />
+    <Property Name="IdNivel" Type="int" Nullable="false" />
+    <Property Name="DesNivel" Type="nvarchar" MaxLength="200" />
+    <Property Name="IdPeriodo" Type="int" Nullable="false" />
+    <Property Name="DesPeriodo" Type="nvarchar" MaxLength="200" />
+    <Property Name="Materia" Type="int" Nullable="false" />
+    <Property Name="DesMateria" Type="nvarchar" MaxLength="250" />
+    <Property Name="Calificacion" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CAT_Beca_CAT_TipoBeca">
+    <End Role="CAT_TipoBeca" Type="Self.CAT_TipoBeca" Multiplicity="1" />
+    <End Role="CAT_Beca" Type="Self.CAT_Beca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_TipoBeca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CAT_Beca">
+        <PropertyRef Name="Id_TipoBeca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DON_Donadores_NAC_Nacionalidad">
+    <End Role="CAT_Nacionalidad" Type="Self.CAT_Nacionalidad" Multiplicity="1" />
+    <End Role="LIS_Donador" Type="Self.LIS_Donador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nacionalidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Donador">
+        <PropertyRef Name="Id_Nacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Estudiante_NAC_Nacionalidad">
+    <End Role="CAT_Nacionalidad" Type="Self.CAT_Nacionalidad" Multiplicity="1" />
+    <End Role="LIS_Estudiante" Type="Self.LIS_Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nacionalidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Estudiante">
+        <PropertyRef Name="Id_Nacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_CUR_CursoLectivo">
+    <End Role="CAT_CursoLectivo" Type="Self.CAT_CursoLectivo" Multiplicity="1" />
+    <End Role="HIS_HistorialAcademico" Type="Self.HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_CursoLectivo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_CursoLectivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_EST_Estudiante">
+    <End Role="LIS_Estudiante" Type="Self.LIS_Estudiante" Multiplicity="1" />
+    <End Role="HIS_HistorialAcademico" Type="Self.HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Estudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_LIS_Instituciones">
+    <End Role="LIS_Instituciones" Type="Self.LIS_Instituciones" Multiplicity="1" />
+    <End Role="HIS_HistorialAcademico" Type="Self.HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_MAT_Materia">
+    <End Role="CAT_Materia" Type="Self.CAT_Materia" Multiplicity="1" />
+    <End Role="HIS_HistorialAcademico" Type="Self.HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Materia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Materia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_NIV_Nivel">
+    <End Role="CAT_Nivel" Type="Self.CAT_Nivel" Multiplicity="1" />
+    <End Role="HIS_HistorialAcademico" Type="Self.HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nivel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Nivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_PER_Periodo">
+    <End Role="CAT_Periodo" Type="Self.CAT_Periodo" Multiplicity="1" />
+    <End Role="HIS_HistorialAcademico" Type="Self.HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Periodo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Periodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAportes_LIS_Donador">
+    <End Role="LIS_Donador" Type="Self.LIS_Donador" Multiplicity="1" />
+    <End Role="HIS_HistorialAportes" Type="Self.HIS_HistorialAportes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Donador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAportes">
+        <PropertyRef Name="Id_Donador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_AporteCuota_HIS_HistorialAportes">
+    <End Role="HIS_HistorialAportes" Type="Self.HIS_HistorialAportes" Multiplicity="0..1" />
+    <End Role="LIS_AporteCuota" Type="Self.LIS_AporteCuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HIS_HistorialAportes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_AporteCuota">
+        <PropertyRef Name="Id_Aporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_AporteCuota_LIS_CuotasBeca">
+    <End Role="LIS_CuotasBeca" Type="Self.LIS_CuotasBeca" Multiplicity="0..1" />
+    <End Role="LIS_AporteCuota" Type="Self.LIS_AporteCuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_CuotasBeca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_AporteCuota">
+        <PropertyRef Name="Id_Cuota" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_BecaEstudiante_CAT_Beca">
+    <End Role="CAT_Beca" Type="Self.CAT_Beca" Multiplicity="1" />
+    <End Role="LIS_BecaEstudiante" Type="Self.LIS_BecaEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Beca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_BecaEstudiante">
+        <PropertyRef Name="Id_Beca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_BecaEstudiante_LIS_Estudiante">
+    <End Role="LIS_Estudiante" Type="Self.LIS_Estudiante" Multiplicity="1" />
+    <End Role="LIS_BecaEstudiante" Type="Self.LIS_BecaEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Estudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_BecaEstudiante">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_CuotasBeca_LIS_BecaEstudiante">
+    <End Role="LIS_BecaEstudiante" Type="Self.LIS_BecaEstudiante" Multiplicity="0..1" />
+    <End Role="LIS_CuotasBeca" Type="Self.LIS_CuotasBeca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_BecaEstudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_CuotasBeca">
+        <PropertyRef Name="Id_BecaEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_CuotasBeca_LIS_Donador">
+    <End Role="LIS_Donador" Type="Self.LIS_Donador" Multiplicity="0..1" />
+    <End Role="LIS_CuotasBeca" Type="Self.LIS_CuotasBeca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Donador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_CuotasBeca">
+        <PropertyRef Name="Id_Donador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Donador_CAT_PeriodicidadPago">
+    <End Role="CAT_PeriodicidadPago" Type="Self.CAT_PeriodicidadPago" Multiplicity="1" />
+    <End Role="LIS_Donador" Type="Self.LIS_Donador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_PeriodicidadPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Donador">
+        <PropertyRef Name="Id_Periodicidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Estudiante_LIS_Instituciones">
+    <End Role="LIS_Instituciones" Type="Self.LIS_Instituciones" Multiplicity="0..1" />
+    <End Role="LIS_Estudiante" Type="Self.LIS_Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Estudiante">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Responsable_CAT_EstadoCivil">
+    <End Role="CAT_EstadoCivil" Type="Self.CAT_EstadoCivil" Multiplicity="0..1" />
+    <End Role="LIS_Responsable" Type="Self.LIS_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_EstadoCivil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Responsable">
+        <PropertyRef Name="Id_EstadoCivil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Responsable_CAT_Nacionalidad">
+    <End Role="CAT_Nacionalidad" Type="Self.CAT_Nacionalidad" Multiplicity="0..1" />
+    <End Role="LIS_Responsable" Type="Self.LIS_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nacionalidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Responsable">
+        <PropertyRef Name="Id_Nacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Responsable_CAT_TipoResponsable">
+    <End Role="CAT_TipoResponsable" Type="Self.CAT_TipoResponsable" Multiplicity="0..1" />
+    <End Role="LIS_Responsable" Type="Self.LIS_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_TipoResponsable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Responsable">
+        <PropertyRef Name="Id_TipoResponsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_CursoLectivo_Institucion_CAT_CursoLectivo">
+    <End Role="CAT_CursoLectivo" Type="Self.CAT_CursoLectivo" Multiplicity="1" />
+    <End Role="REL_CursoLectivo_Institucion" Type="Self.REL_CursoLectivo_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_CursoLectivo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_CursoLectivo_Institucion">
+        <PropertyRef Name="IdCursoLectivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_CursoLectivo_Institucion_LIS_Instituciones">
+    <End Role="LIS_Instituciones" Type="Self.LIS_Instituciones" Multiplicity="1" />
+    <End Role="REL_CursoLectivo_Institucion" Type="Self.REL_CursoLectivo_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_CursoLectivo_Institucion">
+        <PropertyRef Name="IdInstitucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Estudiante_Responsable_LIS_Estudiante">
+    <End Role="LIS_Estudiante" Type="Self.LIS_Estudiante" Multiplicity="1" />
+    <End Role="REL_Estudiante_Responsable" Type="Self.REL_Estudiante_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Estudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Estudiante_Responsable">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Estudiante_Responsable_LIS_Responsable">
+    <End Role="LIS_Responsable" Type="Self.LIS_Responsable" Multiplicity="1" />
+    <End Role="REL_Estudiante_Responsable" Type="Self.REL_Estudiante_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Responsable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Estudiante_Responsable">
+        <PropertyRef Name="Id_Responsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Materia_Institucion_CAT_Materia">
+    <End Role="CAT_Materia" Type="Self.CAT_Materia" Multiplicity="1" />
+    <End Role="REL_Materia_Institucion" Type="Self.REL_Materia_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Materia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Materia_Institucion">
+        <PropertyRef Name="Id_Materia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Materia_Institucion_LIS_Instituciones">
+    <End Role="LIS_Instituciones" Type="Self.LIS_Instituciones" Multiplicity="1" />
+    <End Role="REL_Materia_Institucion" Type="Self.REL_Materia_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Materia_Institucion">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Nivel_Institucion_CAT_Nivel">
+    <End Role="CAT_Nivel" Type="Self.CAT_Nivel" Multiplicity="1" />
+    <End Role="REL_Nivel_Institucion" Type="Self.REL_Nivel_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nivel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Nivel_Institucion">
+        <PropertyRef Name="Id_Nivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Nivel_Institucion_LIS_Instituciones">
+    <End Role="LIS_Instituciones" Type="Self.LIS_Instituciones" Multiplicity="1" />
+    <End Role="REL_Nivel_Institucion" Type="Self.REL_Nivel_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Nivel_Institucion">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Periodo_Institucion_CAT_Periodo">
+    <End Role="CAT_Periodo" Type="Self.CAT_Periodo" Multiplicity="1" />
+    <End Role="REL_Periodo_Institucion" Type="Self.REL_Periodo_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Periodo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Periodo_Institucion">
+        <PropertyRef Name="Id_Periodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Periodo_Institucion_LIS_Instituciones">
+    <End Role="LIS_Instituciones" Type="Self.LIS_Instituciones" Multiplicity="1" />
+    <End Role="REL_Periodo_Institucion" Type="Self.REL_Periodo_Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="REL_Periodo_Institucion">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Usuario_Permiso_CAT_Permiso">
+    <End Role="CAT_Permiso" Type="Self.CAT_Permiso" Multiplicity="1" />
+    <End Role="REL_Usuario_Permiso" Type="Self.REL_Usuario_Permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Permiso">
+        <PropertyRef Name="Id_Permiso" />
+      </Principal>
+      <Dependent Role="REL_Usuario_Permiso">
+        <PropertyRef Name="Id_Permiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REL_Usuario_Permiso_LIS_Usuario">
+    <End Role="LIS_Usuario" Type="Self.LIS_Usuario" Multiplicity="1" />
+    <End Role="REL_Usuario_Permiso" Type="Self.REL_Usuario_Permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="REL_Usuario_Permiso">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_CrearExpedienteAcademico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCursoLectivo" Type="int" Mode="In" />
+    <Parameter Name="idEstudiante" Type="int" Mode="In" />
+    <Parameter Name="idInstitucion" Type="int" Mode="In" />
+    <Parameter Name="idNivel" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="BAPLNModelStoreContainer">
+    <EntitySet Name="CAT_Beca" EntityType="Self.CAT_Beca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_CursoLectivo" EntityType="Self.CAT_CursoLectivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_Estado" EntityType="Self.CAT_Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_EstadoCivil" EntityType="Self.CAT_EstadoCivil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_Materia" EntityType="Self.CAT_Materia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_Nacionalidad" EntityType="Self.CAT_Nacionalidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_Nivel" EntityType="Self.CAT_Nivel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_PeriodicidadPago" EntityType="Self.CAT_PeriodicidadPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_Periodo" EntityType="Self.CAT_Periodo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_Permiso" EntityType="Self.CAT_Permiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_TipoBeca" EntityType="Self.CAT_TipoBeca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAT_TipoResponsable" EntityType="Self.CAT_TipoResponsable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HIS_HistorialAcademico" EntityType="Self.HIS_HistorialAcademico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HIS_HistorialAportes" EntityType="Self.HIS_HistorialAportes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_AporteCuota" EntityType="Self.LIS_AporteCuota" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_BecaEstudiante" EntityType="Self.LIS_BecaEstudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_CuotasBeca" EntityType="Self.LIS_CuotasBeca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_Donador" EntityType="Self.LIS_Donador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_Estudiante" EntityType="Self.LIS_Estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_Instituciones" EntityType="Self.LIS_Instituciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_Responsable" EntityType="Self.LIS_Responsable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIS_Usuario" EntityType="Self.LIS_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REL_CursoLectivo_Institucion" EntityType="Self.REL_CursoLectivo_Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REL_Estudiante_Responsable" EntityType="Self.REL_Estudiante_Responsable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REL_Materia_Institucion" EntityType="Self.REL_Materia_Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REL_Nivel_Institucion" EntityType="Self.REL_Nivel_Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REL_Periodo_Institucion" EntityType="Self.REL_Periodo_Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REL_Usuario_Permiso" EntityType="Self.REL_Usuario_Permiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwHistorialAcademico" EntityType="Self.vwHistorialAcademico" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwHistorialAcademico].[Consecutivo] AS [Consecutivo], 
+    [vwHistorialAcademico].[CarnetEstudiante] AS [CarnetEstudiante], 
+    [vwHistorialAcademico].[IdEstudiante] AS [IdEstudiante], 
+    [vwHistorialAcademico].[NombreEstudiante] AS [NombreEstudiante], 
+    [vwHistorialAcademico].[idInstitucion] AS [idInstitucion], 
+    [vwHistorialAcademico].[DesInstitucion] AS [DesInstitucion], 
+    [vwHistorialAcademico].[IdCursoLectivo] AS [IdCursoLectivo], 
+    [vwHistorialAcademico].[CursoLectivo] AS [CursoLectivo], 
+    [vwHistorialAcademico].[IdNivel] AS [IdNivel], 
+    [vwHistorialAcademico].[DesNivel] AS [DesNivel], 
+    [vwHistorialAcademico].[IdPeriodo] AS [IdPeriodo], 
+    [vwHistorialAcademico].[DesPeriodo] AS [DesPeriodo], 
+    [vwHistorialAcademico].[Materia] AS [Materia], 
+    [vwHistorialAcademico].[DesMateria] AS [DesMateria], 
+    [vwHistorialAcademico].[Calificacion] AS [Calificacion]
+    FROM [dbo].[vwHistorialAcademico] AS [vwHistorialAcademico]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CAT_Beca_CAT_TipoBeca" Association="Self.FK_CAT_Beca_CAT_TipoBeca">
+      <End Role="CAT_TipoBeca" EntitySet="CAT_TipoBeca" />
+      <End Role="CAT_Beca" EntitySet="CAT_Beca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DON_Donadores_NAC_Nacionalidad" Association="Self.FK_DON_Donadores_NAC_Nacionalidad">
+      <End Role="CAT_Nacionalidad" EntitySet="CAT_Nacionalidad" />
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Estudiante_NAC_Nacionalidad" Association="Self.FK_EST_Estudiante_NAC_Nacionalidad">
+      <End Role="CAT_Nacionalidad" EntitySet="CAT_Nacionalidad" />
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_CUR_CursoLectivo" Association="Self.FK_HIS_HistorialAcademico_CUR_CursoLectivo">
+      <End Role="CAT_CursoLectivo" EntitySet="CAT_CursoLectivo" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_EST_Estudiante" Association="Self.FK_HIS_HistorialAcademico_EST_Estudiante">
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_LIS_Instituciones" Association="Self.FK_HIS_HistorialAcademico_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_MAT_Materia" Association="Self.FK_HIS_HistorialAcademico_MAT_Materia">
+      <End Role="CAT_Materia" EntitySet="CAT_Materia" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_NIV_Nivel" Association="Self.FK_HIS_HistorialAcademico_NIV_Nivel">
+      <End Role="CAT_Nivel" EntitySet="CAT_Nivel" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_PER_Periodo" Association="Self.FK_HIS_HistorialAcademico_PER_Periodo">
+      <End Role="CAT_Periodo" EntitySet="CAT_Periodo" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAportes_LIS_Donador" Association="Self.FK_HIS_HistorialAportes_LIS_Donador">
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+      <End Role="HIS_HistorialAportes" EntitySet="HIS_HistorialAportes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_AporteCuota_HIS_HistorialAportes" Association="Self.FK_LIS_AporteCuota_HIS_HistorialAportes">
+      <End Role="HIS_HistorialAportes" EntitySet="HIS_HistorialAportes" />
+      <End Role="LIS_AporteCuota" EntitySet="LIS_AporteCuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_AporteCuota_LIS_CuotasBeca" Association="Self.FK_LIS_AporteCuota_LIS_CuotasBeca">
+      <End Role="LIS_CuotasBeca" EntitySet="LIS_CuotasBeca" />
+      <End Role="LIS_AporteCuota" EntitySet="LIS_AporteCuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_BecaEstudiante_CAT_Beca" Association="Self.FK_LIS_BecaEstudiante_CAT_Beca">
+      <End Role="CAT_Beca" EntitySet="CAT_Beca" />
+      <End Role="LIS_BecaEstudiante" EntitySet="LIS_BecaEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_BecaEstudiante_LIS_Estudiante" Association="Self.FK_LIS_BecaEstudiante_LIS_Estudiante">
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+      <End Role="LIS_BecaEstudiante" EntitySet="LIS_BecaEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_CuotasBeca_LIS_BecaEstudiante" Association="Self.FK_LIS_CuotasBeca_LIS_BecaEstudiante">
+      <End Role="LIS_BecaEstudiante" EntitySet="LIS_BecaEstudiante" />
+      <End Role="LIS_CuotasBeca" EntitySet="LIS_CuotasBeca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_CuotasBeca_LIS_Donador" Association="Self.FK_LIS_CuotasBeca_LIS_Donador">
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+      <End Role="LIS_CuotasBeca" EntitySet="LIS_CuotasBeca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Donador_CAT_PeriodicidadPago" Association="Self.FK_LIS_Donador_CAT_PeriodicidadPago">
+      <End Role="CAT_PeriodicidadPago" EntitySet="CAT_PeriodicidadPago" />
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Estudiante_LIS_Instituciones" Association="Self.FK_LIS_Estudiante_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Responsable_CAT_EstadoCivil" Association="Self.FK_LIS_Responsable_CAT_EstadoCivil">
+      <End Role="CAT_EstadoCivil" EntitySet="CAT_EstadoCivil" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Responsable_CAT_Nacionalidad" Association="Self.FK_LIS_Responsable_CAT_Nacionalidad">
+      <End Role="CAT_Nacionalidad" EntitySet="CAT_Nacionalidad" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Responsable_CAT_TipoResponsable" Association="Self.FK_LIS_Responsable_CAT_TipoResponsable">
+      <End Role="CAT_TipoResponsable" EntitySet="CAT_TipoResponsable" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_CursoLectivo_Institucion_CAT_CursoLectivo" Association="Self.FK_REL_CursoLectivo_Institucion_CAT_CursoLectivo">
+      <End Role="CAT_CursoLectivo" EntitySet="CAT_CursoLectivo" />
+      <End Role="REL_CursoLectivo_Institucion" EntitySet="REL_CursoLectivo_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_CursoLectivo_Institucion_LIS_Instituciones" Association="Self.FK_REL_CursoLectivo_Institucion_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="REL_CursoLectivo_Institucion" EntitySet="REL_CursoLectivo_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Estudiante_Responsable_LIS_Estudiante" Association="Self.FK_REL_Estudiante_Responsable_LIS_Estudiante">
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+      <End Role="REL_Estudiante_Responsable" EntitySet="REL_Estudiante_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Estudiante_Responsable_LIS_Responsable" Association="Self.FK_REL_Estudiante_Responsable_LIS_Responsable">
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+      <End Role="REL_Estudiante_Responsable" EntitySet="REL_Estudiante_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Materia_Institucion_CAT_Materia" Association="Self.FK_REL_Materia_Institucion_CAT_Materia">
+      <End Role="CAT_Materia" EntitySet="CAT_Materia" />
+      <End Role="REL_Materia_Institucion" EntitySet="REL_Materia_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Materia_Institucion_LIS_Instituciones" Association="Self.FK_REL_Materia_Institucion_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="REL_Materia_Institucion" EntitySet="REL_Materia_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Nivel_Institucion_CAT_Nivel" Association="Self.FK_REL_Nivel_Institucion_CAT_Nivel">
+      <End Role="CAT_Nivel" EntitySet="CAT_Nivel" />
+      <End Role="REL_Nivel_Institucion" EntitySet="REL_Nivel_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Nivel_Institucion_LIS_Instituciones" Association="Self.FK_REL_Nivel_Institucion_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="REL_Nivel_Institucion" EntitySet="REL_Nivel_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Periodo_Institucion_CAT_Periodo" Association="Self.FK_REL_Periodo_Institucion_CAT_Periodo">
+      <End Role="CAT_Periodo" EntitySet="CAT_Periodo" />
+      <End Role="REL_Periodo_Institucion" EntitySet="REL_Periodo_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Periodo_Institucion_LIS_Instituciones" Association="Self.FK_REL_Periodo_Institucion_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="REL_Periodo_Institucion" EntitySet="REL_Periodo_Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Usuario_Permiso_CAT_Permiso" Association="Self.FK_REL_Usuario_Permiso_CAT_Permiso">
+      <End Role="CAT_Permiso" EntitySet="CAT_Permiso" />
+      <End Role="REL_Usuario_Permiso" EntitySet="REL_Usuario_Permiso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REL_Usuario_Permiso_LIS_Usuario" Association="Self.FK_REL_Usuario_Permiso_LIS_Usuario">
+      <End Role="LIS_Usuario" EntitySet="LIS_Usuario" />
+      <End Role="REL_Usuario_Permiso" EntitySet="REL_Usuario_Permiso" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

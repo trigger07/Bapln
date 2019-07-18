@@ -1,0 +1,98 @@
+﻿@model TS.BAPLN.DataEntities.DTO.BecaEstudianteDTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BecaEstudianteDTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Estudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Estudiante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estudiante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Beca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Beca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoBeca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoBeca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoCuota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoCuota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadCuotas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadCuotas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

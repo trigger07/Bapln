@@ -1,0 +1,454 @@
+﻿@model TS.BAPLN.DataEntities.DTO.CatalogosDTO
+
+<div class="panel panel-inverse">
+    <div class="panel-heading">
+        <h4 class="panel-title">Listado</h4>
+    </div>
+    <div class="panel-body" id="pnlCatalogos">
+        <div class="row">
+            @*Materias*@
+            <div class="col-md-3 col-sm-6">
+                <div class="widget widget-stats bg-green">
+                    <div class="stats-icon"><i class="fa fa-book"></i></div>
+                    <div class="stats-info">
+                        <h4><span class="semi-bold">MATERIAS</span></h4>
+                    </div>
+                    <div class="stats-link">
+                        <a href="#modal-add" data-toggle="modal" data-catalog="m" class="agregar">Agregar <i class="fa fa-pencil"></i></a>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @foreach (var item in Model.Materias)
+                            {
+                                <li>
+                                    <a href="#modal-alert" class="borrar" data-activo="@item.Activo" data-toggle="modal" data-id="@item.Id" data-catalog="m" data-title="@item.Descripcion"><i class="fa fa-trash-o"></i></a>
+                                    <a class="activar" data-inactivo="@item.Activo" data-id="@item.Id" data-catalog="m" data-title="@item.Descripcion"><i class="fa fa-plug"></i></a>
+                                    <a style="" title="" data-original-title="" class="editable editable-click editable-empty materia" href="#" data-type="text" data-pk="@item.Id" data-catalog="m" data-placement="bottom" data-placeholder="Required" data-title="Agregue una descripción">@item.Descripcion</a>
+                                </li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            @*Períodos*@
+            <div class="col-md-3 col-sm-6">
+                <div class="widget widget-stats bg-blue">
+                    <div class="stats-icon"><i class="fa fa-history"></i></div>
+                    <div class="stats-info">
+                        <h4><span class="semi-bold">PERIODOS</span></h4>
+                    </div>
+                    <div class="stats-link">
+                        <a href="#modal-add" data-toggle="modal" data-catalog="p" class="agregar">Agregar <i class="fa fa-pencil"></i></a>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @foreach (var item in Model.Periodos)
+                            {
+                                <li>
+                                    <a href="#modal-alert" class="borrar" data-activo="@item.Activo" data-toggle="modal" data-id="@item.Id" data-catalog="p" data-title="@item.Descripcion"><i class="fa fa-trash-o"></i></a>
+                                    <a class="activar" data-inactivo="@item.Activo" data-id="@item.Id" data-catalog="p" data-title="@item.Descripcion"><i class="fa fa-plug"></i></a>
+                                    <a style="" title="" data-original-title="" class="editable editable-click periodo" href="#" data-type="text" data-pk="@item.Id" data-catalog="p" data-placement="bottom" data-placeholder="Required" data-title="Agregue una descripción">@item.Descripcion</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @*Niveles*@
+            <div class="col-md-3 col-sm-6">
+                <div class="widget widget-stats bg-purple">
+                    <div class="stats-icon"><i class="fa fa-mortar-board"></i></div>
+                    <div class="stats-info">
+                        <h4><span class="semi-bold">NIVELES</span></h4>
+                    </div>
+                    <div class="stats-link">
+                        <a href="#modal-add" data-toggle="modal" data-catalog="n" class="agregar">Agregar <i class="fa fa-pencil"></i></a>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @foreach (var item in Model.Niveles)
+                            {
+                                <li>
+                                    <a href="#modal-alert" class="borrar" data-activo="@item.Activo" data-toggle="modal" data-id="@item.Id" data-catalog="n" data-title="@item.Descripcion"><i class="fa fa-trash-o"></i></a>
+                                    <a class="activar" data-inactivo="@item.Activo" data-id="@item.Id" data-catalog="n" data-title="@item.Descripcion"><i class="fa fa-plug"></i></a>
+                                    <a title="" data-original-title="" class="editable editable-click nivel" href="#" data-type="text" data-pk="@item.Id" data-catalog="n" data-placement="bottom" data-placeholder="Required" data-title="Agregue una descripción">@item.Descripcion</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @*Curso Lectivo*@
+            <div class="col-md-3 col-sm-6">
+                <div class="widget widget-stats bg-red">
+                    <div class="stats-icon"><i class="fa fa-calendar"></i></div>
+                    <div class="stats-info">
+                        <h4><span class="semi-bold">CURSO LECTIVO</span></h4>
+                    </div>
+                    <div class="stats-link">
+                        <a href="#modal-add" data-toggle="modal" data-catalog="c" class="agregar">Agregar <i class="fa fa-pencil"></i></a>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @foreach (var item in Model.CursosLectivos)
+                            {
+                                <li>
+                                    <a href="#modal-alert" class="borrar" data-activo="@item.Activo" data-toggle="modal" data-id="@item.Id" data-catalog="c" data-title="@item.Descripcion"><i class="fa fa-trash-o"></i></a>
+                                    <a class="activar" data-inactivo="@item.Activo" data-id="@item.Id" data-catalog="c" data-title="@item.Descripcion"><i class="fa fa-plug"></i></a>
+                                    <a style="" title="" data-original-title="" class="editable editable-click cursolectivo" href="#" data-type="text" data-pk="@item.Id" data-catalog="d" data-placement="bottom" data-placeholder="Required" data-title="Agregue una descripción">@item.Descripcion</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade in" id="modal-add" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Agregar Nuevo</h4>
+            </div>
+            <div class="modal-body">
+                <form data-async action="/Insertar" method="POST">
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="control-label col-md-3 col-sm-3" for="fullname">Descripción:</label>
+                            <div class="col-md-9 col-sm-9">
+                                <input type="text" data-parsley-id="4840" class="form-control" id="descripcion" name="descripcion" data-parsley-range="[1,200]" placeholder="De 1 a 200 caracteres" data-catalog=""></input>
+                                <ul id="parsley-id-4840" class="parsley-errors-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</a>
+                <a href="javascript:;" class="btn btn-sm btn-success" id="btnSalvarNuevo">Salvar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-alert" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Borrar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="m-b-0">
+                    <h5><span id="mensajePersonalizado"></span></h5>
+                    <input type="hidden" id="identificador" value="" data-catalog="" data-activo="">
+                    <ul id="parsley-id-4840" class="parsley-errors-list"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</a>
+                <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal" id="btnBorrarElemento">Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    li .fa-trash-o {
+        padding-right:7px;
+        cursor:pointer;
+        color:black !important;
+    }
+
+    [data-activo="False"] {
+        display:none;
+    }
+
+    [data-inactivo="True"] {
+        display:none;        
+    }
+
+    [data-inactivo="False"], [data-inactivo="False"] + a {
+        color: lightgray !important;
+    }
+
+    li .fa-plug {
+        padding-right: 6px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('.materia').editable({
+            validate: function(value) {
+                if (!value) {
+                    return 'Required field!';
+                }
+            },
+            send: 'always',
+            url: '@Url.Action("Editar", "Catalogo")',
+            params: function (params) {
+                var data = {};
+                data["descripcion"] = params["value"];
+                data["catalogoId"] = 'm';
+                data["itemId"] = params.pk;
+                return data;
+            },
+            ajaxOptions: {
+                type: 'POST',
+                dataType: 'json',
+                async: true,
+                cache: false,
+                timeout: 10000
+            },
+            success: function (response, newValue) {
+                if (response.Result === "duplicate") {
+                    return 'Este valor ya existe en este catálogo!';
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
+
+        $('.periodo').editable({
+            validate: function (value) {
+                if (!value) {
+                    return 'Required field!';
+                }
+            },
+            send: 'always',
+            url: '@Url.Action("Editar", "Catalogo")',
+            params: function (params) {
+                var data = {};
+                data["descripcion"] = params["value"];
+                data["catalogoId"] = 'p';
+                data["itemId"] = params.pk;
+                return data;
+            },
+            ajaxOptions: {
+                type: 'POST',
+                dataType: 'json',
+                async: true,
+                cache: false,
+                timeout: 10000
+            },
+            success: function (response, newValue) {
+                if (response.Result === "duplicate") {
+                    return 'Este valor ya existe en este catálogo!';
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
+
+        $('.nivel').editable({
+            validate: function (value) {
+                if (!value) {
+                    return 'Required field!';
+                }
+            },
+            send: 'always',
+            url: '@Url.Action("Editar", "Catalogo")',
+            params: function (params) {
+                var data = {};
+                data["descripcion"] = params["value"];
+                data["catalogoId"] = 'n';
+                data["itemId"] = params.pk;
+                return data;
+            },
+            ajaxOptions: {
+                type: 'POST',
+                dataType: 'json',
+                async: true,
+                cache: false,
+                timeout: 10000
+            },
+            success: function (response, newValue) {
+                if (response.Result === "duplicate") {
+                    return 'Este valor ya existe en este catálogo!';
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
+
+        $('.cursolectivo').editable({
+            validate: function (value) {
+                if (!value) {
+                    return 'Required field!';
+                }
+            },
+            send: 'always',
+            url: '@Url.Action("Editar", "Catalogo")',
+            params: function (params) {
+                var data = {};
+                data["descripcion"] = params["value"];
+                data["catalogoId"] = 'c';
+                data["itemId"] = params.pk;
+                return data;
+            },
+            ajaxOptions: {
+                type: 'POST',
+                dataType: 'json',
+                async: true,
+                cache: false,
+                timeout: 10000
+            },
+            success: function (response, newValue) {
+                if (response.Result === "duplicate") {
+                    return 'Este valor ya existe en este catálogo!';
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
+
+        $('.borrar').on('click', function () {
+            $('#modal-alert #identificador').val('');
+            var catalog = $(this).attr("data-catalog");
+            var title = '';
+            var catalogo;
+            switch (catalog) {
+                case 'm':
+                    title = 'Borrar Materia';
+                    catalogo = 'Materia';
+                    break;
+                case 'p':
+                    title = 'Borrar Período';
+                    catalogo = 'Período';
+                    break;
+                case 'n':
+                    title = 'Borrar Nivel';
+                    catalogo = 'Nivel';
+                    break;
+                case 'c':
+                    title = 'Borrar Curso Lectivo';
+                    catalogo = 'Curso Lectivo';
+                    break;
+            }
+            $('#mensajePersonalizado').html('Desea borrar <strong>' + $(this).attr("data-title") + '</strong> del católogo de <strong>' + catalogo + '</strong>?');
+            $('#modal-alert .modal-title').text(title);
+            $('#modal-alert #identificador').val($(this).attr("data-title"));
+            $('#modal-alert #identificador').attr('data-catalog', catalog);
+            $('#modal-alert #identificador').attr('data-id', $(this).attr("data-id"));
+            $('#modal-alert #identificador').attr('data-activo', $(this).attr("data-activo"));
+        });
+
+        $('#btnBorrarElemento').on('click', function () {
+            var id = $('#modal-alert #identificador').attr("data-id");
+            var catalogo = $('#modal-alert #identificador').attr("data-catalog");
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Borrar", "Catalogo")',
+                data: JSON.stringify({ "catalogoId": catalogo, "id": id }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data, textStatus, jQxhr) {
+                    if (data.Result === 'borrado') {                        
+                        borradoResult = 'borrado';
+                        mostrarMensaje('Elemento borrado del sistema!');
+                    }
+                    else {
+                        mostrarMensaje('Elemento desactivado porque está en uso.');
+                    }
+                    $('#modal-alert').modal('hide');
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    debugger;
+                }
+            });
+        });
+
+        $('.activar').on('click', function () {
+            var id = $(this).attr("data-id");
+            var catalogo = $(this).attr("data-catalog");
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Activar", "Catalogo")',
+                data: JSON.stringify({ "catalogoId": catalogo, "id": id }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data, textStatus, jQxhr) {
+                    if (data.Result === "success") {
+                        $('#pnlListas').load('/Catalogo/Listas');
+                    }
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    debugger;
+                }
+            });
+        });
+
+        $('.agregar').on('click', function () {
+            $('#modal-add #descripcion').val('');
+            var catalog = $(this).attr("data-catalog");
+            var title = '';
+            switch (catalog) {
+                case 'm':
+                    title = 'Agregar Nueva Materia';
+                    break;
+                case 'p':
+                    title = 'Agregar Nuevo Periodo';
+                    break;
+                case 'n':
+                    title = 'Agregar Nuevo Nivel';
+                    break;
+                case 'c':
+                    title = 'Agregar Nuevo Curso Lectivo';
+                    break;
+            }
+            $('#modal-add .modal-title').text(title);
+            $('#modal-add #descripcion').attr('data-catalog', catalog);
+        });
+
+        $('#btnSalvarNuevo').on('click', function () {
+            if ($('#descripcion').val() == '') {
+                $('.parsley-errors-list').append('<li class="parsley-required">Este valor es requerido!</li>');
+            }
+            else {
+                var nuevo = $('#descripcion').val();
+                var id = $('#modal-add #descripcion').attr('data-catalog');
+
+                $('.parsley-errors-list li').remove();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Insertar", "Catalogo")',
+                    data: JSON.stringify({ "descripcion": nuevo, "catalogoId": id }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data, textStatus, jQxhr) {
+                        if (data.Result === "success") {
+                            $('#modal-add').modal('hide');
+                        } else if (data.Result === "duplicate") {
+                            $('.parsley-errors-list').append('<li class="parsley-required">Este valor ya existe en este catálogo!</li>');
+                        }
+                    },
+                    error: function (jqXhr, textStatus, errorThrown) {
+                        debugger;
+                    }
+                });
+            }
+        });
+
+        $('#modal-add').on('hidden.bs.modal', function (e) {
+            $('#pnlListas').load('/Catalogo/Listas');
+        })
+        $('#modal-alert').on('hidden.bs.modal', function (e) {
+            $('#pnlListas').load('/Catalogo/Listas');
+        })
+    });
+</script>

@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.UI", "TS.BAPLN.UI\TS.BAPLN.UI.csproj", "{6B51F98C-4613-4146-ACF2-E6079EABEDFC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{49CF59DF-0C58-4126-B3FE-F919660488FE} = {49CF59DF-0C58-4126-B3FE-F919660488FE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.Service", "TS.BAPLN.Service\TS.BAPLN.Service.csproj", "{49CF59DF-0C58-4126-B3FE-F919660488FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.DataModel", "TS.BAPLN.DataModel\TS.BAPLN.DataModel.csproj", "{DC3EFA7E-343A-4031-98D7-3F9C45397225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.DataEntities", "TS.BAPLN.DataEntities\TS.BAPLN.DataEntities.csproj", "{03E7C785-2836-4966-A9DE-73FBE7456E60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.DataAccess", "TS.BAPLN.DataAccess\TS.BAPLN.DataAccess.csproj", "{E58DE53E-20CA-4AB9-AEA4-4C3D2B140624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.Common", "TS.BAPLN.Common\TS.BAPLN.Common.csproj", "{7A982436-638B-4944-9678-2C97C3FA5B89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.BusinessLogic", "TS.BAPLN.BusinessLogic\TS.BAPLN.BusinessLogic.csproj", "{B1546C56-63BD-4160-9659-AF54B05A9455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.WPFPrinter", "TS.BAPLN.WPFPrinter\TS.BAPLN.WPFPrinter.csproj", "{9A7248B9-61F0-41AF-96AD-0B45F679A82F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.BAPLN.UnitTest", "TS.BAPLN.UnitTest\TS.BAPLN.UnitTest.csproj", "{FAB179AA-9BFC-4076-A72E-BA8F3DE92F3A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TS.BAPLN.DatabaseStructure", "TS.BAPLN.DatabaseStructure\TS.BAPLN.DatabaseStructure.sqlproj", "{9D4EA090-3D77-4F19-865D-ACD395AE942B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gersontrigueros.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TS.BAPLN.BusinessLogic\\TS.BAPLN.BusinessLogic.csproj
+		SccProjectName1 = TS.BAPLN.BusinessLogic
+		SccLocalPath1 = TS.BAPLN.BusinessLogic
+		SccProjectUniqueName2 = TS.BAPLN.Common\\TS.BAPLN.Common.csproj
+		SccProjectName2 = TS.BAPLN.Common
+		SccLocalPath2 = TS.BAPLN.Common
+		SccProjectUniqueName3 = TS.BAPLN.DataAccess\\TS.BAPLN.DataAccess.csproj
+		SccProjectName3 = TS.BAPLN.DataAccess
+		SccLocalPath3 = TS.BAPLN.DataAccess
+		SccProjectUniqueName4 = TS.BAPLN.DataEntities\\TS.BAPLN.DataEntities.csproj
+		SccProjectName4 = TS.BAPLN.DataEntities
+		SccLocalPath4 = TS.BAPLN.DataEntities
+		SccProjectUniqueName5 = TS.BAPLN.DataModel\\TS.BAPLN.DataModel.csproj
+		SccProjectName5 = TS.BAPLN.DataModel
+		SccLocalPath5 = TS.BAPLN.DataModel
+		SccProjectUniqueName6 = TS.BAPLN.Service\\TS.BAPLN.Service.csproj
+		SccProjectName6 = TS.BAPLN.Service
+		SccLocalPath6 = TS.BAPLN.Service
+		SccProjectUniqueName7 = TS.BAPLN.UI\\TS.BAPLN.UI.csproj
+		SccProjectName7 = TS.BAPLN.UI
+		SccLocalPath7 = TS.BAPLN.UI
+		SccProjectUniqueName8 = TS.BAPLN.UnitTest\\TS.BAPLN.UnitTest.csproj
+		SccProjectName8 = TS.BAPLN.UnitTest
+		SccLocalPath8 = TS.BAPLN.UnitTest
+		SccProjectUniqueName9 = TS.BAPLN.WPFPrinter\\TS.BAPLN.WPFPrinter.csproj
+		SccProjectName9 = TS.BAPLN.WPFPrinter
+		SccLocalPath9 = TS.BAPLN.WPFPrinter
+		SccProjectUniqueName10 = TS.BAPLN.DatabaseStructure\\TS.BAPLN.DatabaseStructure.sqlproj
+		SccProjectName10 = TS.BAPLN.DatabaseStructure
+		SccLocalPath10 = TS.BAPLN.DatabaseStructure
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B51F98C-4613-4146-ACF2-E6079EABEDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B51F98C-4613-4146-ACF2-E6079EABEDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B51F98C-4613-4146-ACF2-E6079EABEDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B51F98C-4613-4146-ACF2-E6079EABEDFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CF59DF-0C58-4126-B3FE-F919660488FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CF59DF-0C58-4126-B3FE-F919660488FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CF59DF-0C58-4126-B3FE-F919660488FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CF59DF-0C58-4126-B3FE-F919660488FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3EFA7E-343A-4031-98D7-3F9C45397225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3EFA7E-343A-4031-98D7-3F9C45397225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3EFA7E-343A-4031-98D7-3F9C45397225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3EFA7E-343A-4031-98D7-3F9C45397225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03E7C785-2836-4966-A9DE-73FBE7456E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E7C785-2836-4966-A9DE-73FBE7456E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E7C785-2836-4966-A9DE-73FBE7456E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E7C785-2836-4966-A9DE-73FBE7456E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E58DE53E-20CA-4AB9-AEA4-4C3D2B140624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E58DE53E-20CA-4AB9-AEA4-4C3D2B140624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E58DE53E-20CA-4AB9-AEA4-4C3D2B140624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E58DE53E-20CA-4AB9-AEA4-4C3D2B140624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A982436-638B-4944-9678-2C97C3FA5B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A982436-638B-4944-9678-2C97C3FA5B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A982436-638B-4944-9678-2C97C3FA5B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A982436-638B-4944-9678-2C97C3FA5B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1546C56-63BD-4160-9659-AF54B05A9455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1546C56-63BD-4160-9659-AF54B05A9455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1546C56-63BD-4160-9659-AF54B05A9455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1546C56-63BD-4160-9659-AF54B05A9455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7248B9-61F0-41AF-96AD-0B45F679A82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7248B9-61F0-41AF-96AD-0B45F679A82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7248B9-61F0-41AF-96AD-0B45F679A82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7248B9-61F0-41AF-96AD-0B45F679A82F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB179AA-9BFC-4076-A72E-BA8F3DE92F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB179AA-9BFC-4076-A72E-BA8F3DE92F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB179AA-9BFC-4076-A72E-BA8F3DE92F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB179AA-9BFC-4076-A72E-BA8F3DE92F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4EA090-3D77-4F19-865D-ACD395AE942B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4EA090-3D77-4F19-865D-ACD395AE942B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4EA090-3D77-4F19-865D-ACD395AE942B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9D4EA090-3D77-4F19-865D-ACD395AE942B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4EA090-3D77-4F19-865D-ACD395AE942B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4EA090-3D77-4F19-865D-ACD395AE942B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

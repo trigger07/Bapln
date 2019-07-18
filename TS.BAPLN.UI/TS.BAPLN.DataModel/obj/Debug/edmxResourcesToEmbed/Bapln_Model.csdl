@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BAPLNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BAPLNEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="CAT_Beca" EntityType="BAPLNModel.CAT_Beca" />
+    <EntitySet Name="CAT_CursoLectivo" EntityType="BAPLNModel.CAT_CursoLectivo" />
+    <EntitySet Name="CAT_Estado" EntityType="BAPLNModel.CAT_Estado" />
+    <EntitySet Name="CAT_Materia" EntityType="BAPLNModel.CAT_Materia" />
+    <EntitySet Name="CAT_Nacionalidad" EntityType="BAPLNModel.CAT_Nacionalidad" />
+    <EntitySet Name="CAT_Nivel" EntityType="BAPLNModel.CAT_Nivel" />
+    <EntitySet Name="CAT_PeriodicidadPago" EntityType="BAPLNModel.CAT_PeriodicidadPago" />
+    <EntitySet Name="CAT_Periodo" EntityType="BAPLNModel.CAT_Periodo" />
+    <EntitySet Name="CAT_Permiso" EntityType="BAPLNModel.CAT_Permiso" />
+    <EntitySet Name="CAT_TipoBeca" EntityType="BAPLNModel.CAT_TipoBeca" />
+    <EntitySet Name="HIS_HistorialAcademico" EntityType="BAPLNModel.HIS_HistorialAcademico" />
+    <EntitySet Name="HIS_HistorialAportes" EntityType="BAPLNModel.HIS_HistorialAportes" />
+    <EntitySet Name="LIS_AporteCuota" EntityType="BAPLNModel.LIS_AporteCuota" />
+    <EntitySet Name="LIS_BecaEstudiante" EntityType="BAPLNModel.LIS_BecaEstudiante" />
+    <EntitySet Name="LIS_CuotasBeca" EntityType="BAPLNModel.LIS_CuotasBeca" />
+    <EntitySet Name="LIS_Donador" EntityType="BAPLNModel.LIS_Donador" />
+    <EntitySet Name="LIS_Estudiante" EntityType="BAPLNModel.LIS_Estudiante" />
+    <EntitySet Name="LIS_Instituciones" EntityType="BAPLNModel.LIS_Instituciones" />
+    <EntitySet Name="LIS_Usuario" EntityType="BAPLNModel.LIS_Usuario" />
+    <EntitySet Name="vwHistorialAcademicoes" EntityType="BAPLNModel.vwHistorialAcademico" />
+    <AssociationSet Name="FK_CAT_Beca_CAT_TipoBeca" Association="BAPLNModel.FK_CAT_Beca_CAT_TipoBeca">
+      <End Role="CAT_TipoBeca" EntitySet="CAT_TipoBeca" />
+      <End Role="CAT_Beca" EntitySet="CAT_Beca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_BecaEstudiante_CAT_Beca" Association="BAPLNModel.FK_LIS_BecaEstudiante_CAT_Beca">
+      <End Role="CAT_Beca" EntitySet="CAT_Beca" />
+      <End Role="LIS_BecaEstudiante" EntitySet="LIS_BecaEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_CUR_CursoLectivo" Association="BAPLNModel.FK_HIS_HistorialAcademico_CUR_CursoLectivo">
+      <End Role="CAT_CursoLectivo" EntitySet="CAT_CursoLectivo" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_MAT_Materia" Association="BAPLNModel.FK_HIS_HistorialAcademico_MAT_Materia">
+      <End Role="CAT_Materia" EntitySet="CAT_Materia" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DON_Donadores_NAC_Nacionalidad" Association="BAPLNModel.FK_DON_Donadores_NAC_Nacionalidad">
+      <End Role="CAT_Nacionalidad" EntitySet="CAT_Nacionalidad" />
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Estudiante_NAC_Nacionalidad" Association="BAPLNModel.FK_EST_Estudiante_NAC_Nacionalidad">
+      <End Role="CAT_Nacionalidad" EntitySet="CAT_Nacionalidad" />
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_NIV_Nivel" Association="BAPLNModel.FK_HIS_HistorialAcademico_NIV_Nivel">
+      <End Role="CAT_Nivel" EntitySet="CAT_Nivel" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Donador_CAT_PeriodicidadPago" Association="BAPLNModel.FK_LIS_Donador_CAT_PeriodicidadPago">
+      <End Role="CAT_PeriodicidadPago" EntitySet="CAT_PeriodicidadPago" />
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_PER_Periodo" Association="BAPLNModel.FK_HIS_HistorialAcademico_PER_Periodo">
+      <End Role="CAT_Periodo" EntitySet="CAT_Periodo" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_EST_Estudiante" Association="BAPLNModel.FK_HIS_HistorialAcademico_EST_Estudiante">
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAcademico_LIS_Instituciones" Association="BAPLNModel.FK_HIS_HistorialAcademico_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="HIS_HistorialAcademico" EntitySet="HIS_HistorialAcademico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HIS_HistorialAportes_LIS_Donador" Association="BAPLNModel.FK_HIS_HistorialAportes_LIS_Donador">
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+      <End Role="HIS_HistorialAportes" EntitySet="HIS_HistorialAportes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_AporteCuota_HIS_HistorialAportes" Association="BAPLNModel.FK_LIS_AporteCuota_HIS_HistorialAportes">
+      <End Role="HIS_HistorialAportes" EntitySet="HIS_HistorialAportes" />
+      <End Role="LIS_AporteCuota" EntitySet="LIS_AporteCuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_AporteCuota_LIS_CuotasBeca" Association="BAPLNModel.FK_LIS_AporteCuota_LIS_CuotasBeca">
+      <End Role="LIS_CuotasBeca" EntitySet="LIS_CuotasBeca" />
+      <End Role="LIS_AporteCuota" EntitySet="LIS_AporteCuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_BecaEstudiante_LIS_Estudiante" Association="BAPLNModel.FK_LIS_BecaEstudiante_LIS_Estudiante">
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+      <End Role="LIS_BecaEstudiante" EntitySet="LIS_BecaEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_CuotasBeca_LIS_BecaEstudiante" Association="BAPLNModel.FK_LIS_CuotasBeca_LIS_BecaEstudiante">
+      <End Role="LIS_BecaEstudiante" EntitySet="LIS_BecaEstudiante" />
+      <End Role="LIS_CuotasBeca" EntitySet="LIS_CuotasBeca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_CuotasBeca_LIS_Donador" Association="BAPLNModel.FK_LIS_CuotasBeca_LIS_Donador">
+      <End Role="LIS_Donador" EntitySet="LIS_Donador" />
+      <End Role="LIS_CuotasBeca" EntitySet="LIS_CuotasBeca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Estudiante_LIS_Instituciones" Association="BAPLNModel.FK_LIS_Estudiante_LIS_Instituciones">
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="REL_CursoLectivo_Institucion" Association="BAPLNModel.REL_CursoLectivo_Institucion">
+      <End Role="CAT_CursoLectivo" EntitySet="CAT_CursoLectivo" />
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+    </AssociationSet>
+    <AssociationSet Name="REL_Materia_Institucion" Association="BAPLNModel.REL_Materia_Institucion">
+      <End Role="CAT_Materia" EntitySet="CAT_Materia" />
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+    </AssociationSet>
+    <AssociationSet Name="REL_Nivel_Institucion" Association="BAPLNModel.REL_Nivel_Institucion">
+      <End Role="CAT_Nivel" EntitySet="CAT_Nivel" />
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+    </AssociationSet>
+    <AssociationSet Name="REL_Periodo_Institucion" Association="BAPLNModel.REL_Periodo_Institucion">
+      <End Role="CAT_Periodo" EntitySet="CAT_Periodo" />
+      <End Role="LIS_Instituciones" EntitySet="LIS_Instituciones" />
+    </AssociationSet>
+    <AssociationSet Name="REL_Usuario_Permiso" Association="BAPLNModel.REL_Usuario_Permiso">
+      <End Role="CAT_Permiso" EntitySet="CAT_Permiso" />
+      <End Role="LIS_Usuario" EntitySet="LIS_Usuario" />
+    </AssociationSet>
+    <FunctionImport Name="sp_CrearExpedienteAcademico">
+      <Parameter Name="idCursoLectivo" Mode="In" Type="Int32" />
+      <Parameter Name="idEstudiante" Mode="In" Type="Int32" />
+      <Parameter Name="idInstitucion" Mode="In" Type="Int32" />
+      <Parameter Name="idNivel" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CAT_EstadoCivil" EntityType="BAPLNModel.CAT_EstadoCivil" />
+    <EntitySet Name="CAT_TipoResponsable" EntityType="BAPLNModel.CAT_TipoResponsable" />
+    <EntitySet Name="LIS_Responsable" EntityType="BAPLNModel.LIS_Responsable" />
+    <AssociationSet Name="FK_LIS_Responsable_CAT_EstadoCivil" Association="BAPLNModel.FK_LIS_Responsable_CAT_EstadoCivil">
+      <End Role="CAT_EstadoCivil" EntitySet="CAT_EstadoCivil" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Responsable_CAT_Nacionalidad" Association="BAPLNModel.FK_LIS_Responsable_CAT_Nacionalidad">
+      <End Role="CAT_Nacionalidad" EntitySet="CAT_Nacionalidad" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIS_Responsable_CAT_TipoResponsable" Association="BAPLNModel.FK_LIS_Responsable_CAT_TipoResponsable">
+      <End Role="CAT_TipoResponsable" EntitySet="CAT_TipoResponsable" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+    <AssociationSet Name="REL_Estudiante_Responsable" Association="BAPLNModel.REL_Estudiante_Responsable">
+      <End Role="LIS_Estudiante" EntitySet="LIS_Estudiante" />
+      <End Role="LIS_Responsable" EntitySet="LIS_Responsable" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CAT_Beca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id_TipoBeca" Type="Int32" Nullable="false" />
+    <Property Name="MontoTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="MontoCuota" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CantidadCuotas" Type="Int16" Nullable="false" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CAT_TipoBeca" Relationship="BAPLNModel.FK_CAT_Beca_CAT_TipoBeca" FromRole="CAT_Beca" ToRole="CAT_TipoBeca" />
+    <NavigationProperty Name="LIS_BecaEstudiante" Relationship="BAPLNModel.FK_LIS_BecaEstudiante_CAT_Beca" FromRole="CAT_Beca" ToRole="LIS_BecaEstudiante" />
+  </EntityType>
+  <EntityType Name="CAT_CursoLectivo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HIS_HistorialAcademico" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_CUR_CursoLectivo" FromRole="CAT_CursoLectivo" ToRole="HIS_HistorialAcademico" />
+    <NavigationProperty Name="LIS_Instituciones" Relationship="BAPLNModel.REL_CursoLectivo_Institucion" FromRole="CAT_CursoLectivo" ToRole="LIS_Instituciones" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Estado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Materia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HIS_HistorialAcademico" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_MAT_Materia" FromRole="CAT_Materia" ToRole="HIS_HistorialAcademico" />
+    <NavigationProperty Name="LIS_Instituciones" Relationship="BAPLNModel.REL_Materia_Institucion" FromRole="CAT_Materia" ToRole="LIS_Instituciones" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Nacionalidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LIS_Donador" Relationship="BAPLNModel.FK_DON_Donadores_NAC_Nacionalidad" FromRole="CAT_Nacionalidad" ToRole="LIS_Donador" />
+    <NavigationProperty Name="LIS_Estudiante" Relationship="BAPLNModel.FK_EST_Estudiante_NAC_Nacionalidad" FromRole="CAT_Nacionalidad" ToRole="LIS_Estudiante" />
+    <NavigationProperty Name="LIS_Responsable" Relationship="BAPLNModel.FK_LIS_Responsable_CAT_Nacionalidad" FromRole="CAT_Nacionalidad" ToRole="LIS_Responsable" />
+  </EntityType>
+  <EntityType Name="CAT_Nivel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HIS_HistorialAcademico" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_NIV_Nivel" FromRole="CAT_Nivel" ToRole="HIS_HistorialAcademico" />
+    <NavigationProperty Name="LIS_Instituciones" Relationship="BAPLNModel.REL_Nivel_Institucion" FromRole="CAT_Nivel" ToRole="LIS_Instituciones" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_PeriodicidadPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LIS_Donador" Relationship="BAPLNModel.FK_LIS_Donador_CAT_PeriodicidadPago" FromRole="CAT_PeriodicidadPago" ToRole="LIS_Donador" />
+  </EntityType>
+  <EntityType Name="CAT_Periodo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HIS_HistorialAcademico" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_PER_Periodo" FromRole="CAT_Periodo" ToRole="HIS_HistorialAcademico" />
+    <NavigationProperty Name="LIS_Instituciones" Relationship="BAPLNModel.REL_Periodo_Institucion" FromRole="CAT_Periodo" ToRole="LIS_Instituciones" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAT_Permiso">
+    <Key>
+      <PropertyRef Name="Id_Permiso" />
+    </Key>
+    <Property Name="Id_Permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LIS_Usuario" Relationship="BAPLNModel.REL_Usuario_Permiso" FromRole="CAT_Permiso" ToRole="LIS_Usuario" />
+  </EntityType>
+  <EntityType Name="CAT_TipoBeca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CAT_Beca" Relationship="BAPLNModel.FK_CAT_Beca_CAT_TipoBeca" FromRole="CAT_TipoBeca" ToRole="CAT_Beca" />
+  </EntityType>
+  <EntityType Name="HIS_HistorialAcademico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Estudiante" Type="Int32" Nullable="false" />
+    <Property Name="Id_Materia" Type="Int32" Nullable="false" />
+    <Property Name="Id_Periodo" Type="Int32" Nullable="false" />
+    <Property Name="Id_Nivel" Type="Int32" Nullable="false" />
+    <Property Name="Nota" Type="Int16" Nullable="false" />
+    <Property Name="Id_CursoLectivo" Type="Int32" Nullable="false" />
+    <Property Name="Id_Institucion" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CAT_CursoLectivo" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_CUR_CursoLectivo" FromRole="HIS_HistorialAcademico" ToRole="CAT_CursoLectivo" />
+    <NavigationProperty Name="CAT_Materia" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_MAT_Materia" FromRole="HIS_HistorialAcademico" ToRole="CAT_Materia" />
+    <NavigationProperty Name="CAT_Nivel" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_NIV_Nivel" FromRole="HIS_HistorialAcademico" ToRole="CAT_Nivel" />
+    <NavigationProperty Name="CAT_Periodo" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_PER_Periodo" FromRole="HIS_HistorialAcademico" ToRole="CAT_Periodo" />
+    <NavigationProperty Name="LIS_Estudiante" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_EST_Estudiante" FromRole="HIS_HistorialAcademico" ToRole="LIS_Estudiante" />
+    <NavigationProperty Name="LIS_Instituciones" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_LIS_Instituciones" FromRole="HIS_HistorialAcademico" ToRole="LIS_Instituciones" />
+  </EntityType>
+  <EntityType Name="HIS_HistorialAportes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Donador" Type="Int32" Nullable="false" />
+    <Property Name="Monto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Anulada" Type="Boolean" Nullable="false" />
+    <Property Name="Aprobada" Type="Boolean" Nullable="false" />
+    <Property Name="UsuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LIS_Donador" Relationship="BAPLNModel.FK_HIS_HistorialAportes_LIS_Donador" FromRole="HIS_HistorialAportes" ToRole="LIS_Donador" />
+    <NavigationProperty Name="LIS_AporteCuota" Relationship="BAPLNModel.FK_LIS_AporteCuota_HIS_HistorialAportes" FromRole="HIS_HistorialAportes" ToRole="LIS_AporteCuota" />
+  </EntityType>
+  <EntityType Name="LIS_AporteCuota">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Cuota" Type="Int32" />
+    <Property Name="Id_Aporte" Type="Int32" />
+    <NavigationProperty Name="HIS_HistorialAportes" Relationship="BAPLNModel.FK_LIS_AporteCuota_HIS_HistorialAportes" FromRole="LIS_AporteCuota" ToRole="HIS_HistorialAportes" />
+    <NavigationProperty Name="LIS_CuotasBeca" Relationship="BAPLNModel.FK_LIS_AporteCuota_LIS_CuotasBeca" FromRole="LIS_AporteCuota" ToRole="LIS_CuotasBeca" />
+  </EntityType>
+  <EntityType Name="LIS_BecaEstudiante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaFinal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id_Estudiante" Type="Int32" Nullable="false" />
+    <Property Name="Id_Beca" Type="Int32" Nullable="false" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+    <Property Name="MontoTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MontoCuota" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CantidadCuotas" Type="Int16" />
+    <NavigationProperty Name="CAT_Beca" Relationship="BAPLNModel.FK_LIS_BecaEstudiante_CAT_Beca" FromRole="LIS_BecaEstudiante" ToRole="CAT_Beca" />
+    <NavigationProperty Name="LIS_Estudiante" Relationship="BAPLNModel.FK_LIS_BecaEstudiante_LIS_Estudiante" FromRole="LIS_BecaEstudiante" ToRole="LIS_Estudiante" />
+    <NavigationProperty Name="LIS_CuotasBeca" Relationship="BAPLNModel.FK_LIS_CuotasBeca_LIS_BecaEstudiante" FromRole="LIS_BecaEstudiante" ToRole="LIS_CuotasBeca" />
+  </EntityType>
+  <EntityType Name="LIS_CuotasBeca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_BecaEstudiante" Type="Int32" />
+    <Property Name="Id_Donador" Type="Int32" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Pendiente" Type="Boolean" Nullable="false" />
+    <Property Name="Activa" Type="Boolean" Nullable="false" />
+    <Property Name="Anulada" Type="Boolean" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LIS_AporteCuota" Relationship="BAPLNModel.FK_LIS_AporteCuota_LIS_CuotasBeca" FromRole="LIS_CuotasBeca" ToRole="LIS_AporteCuota" />
+    <NavigationProperty Name="LIS_BecaEstudiante" Relationship="BAPLNModel.FK_LIS_CuotasBeca_LIS_BecaEstudiante" FromRole="LIS_CuotasBeca" ToRole="LIS_BecaEstudiante" />
+    <NavigationProperty Name="LIS_Donador" Relationship="BAPLNModel.FK_LIS_CuotasBeca_LIS_Donador" FromRole="LIS_CuotasBeca" ToRole="LIS_Donador" />
+  </EntityType>
+  <EntityType Name="LIS_Donador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimerApellido" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonoLocal" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonoMovil" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Periodicidad" Type="Int32" Nullable="false" />
+    <Property Name="MontoAporte" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Id_Nacionalidad" Type="Int32" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CAT_Nacionalidad" Relationship="BAPLNModel.FK_DON_Donadores_NAC_Nacionalidad" FromRole="LIS_Donador" ToRole="CAT_Nacionalidad" />
+    <NavigationProperty Name="CAT_PeriodicidadPago" Relationship="BAPLNModel.FK_LIS_Donador_CAT_PeriodicidadPago" FromRole="LIS_Donador" ToRole="CAT_PeriodicidadPago" />
+    <NavigationProperty Name="HIS_HistorialAportes" Relationship="BAPLNModel.FK_HIS_HistorialAportes_LIS_Donador" FromRole="LIS_Donador" ToRole="HIS_HistorialAportes" />
+    <NavigationProperty Name="LIS_CuotasBeca" Relationship="BAPLNModel.FK_LIS_CuotasBeca_LIS_Donador" FromRole="LIS_Donador" ToRole="LIS_CuotasBeca" />
+  </EntityType>
+  <EntityType Name="LIS_Estudiante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimerApellido" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Carne" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Padre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Madre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonoLocal" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonoMovil" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Fotografia" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Id_Nacionalidad" Type="Int32" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="Id_Institucion" Type="Int32" />
+    <NavigationProperty Name="CAT_Nacionalidad" Relationship="BAPLNModel.FK_EST_Estudiante_NAC_Nacionalidad" FromRole="LIS_Estudiante" ToRole="CAT_Nacionalidad" />
+    <NavigationProperty Name="HIS_HistorialAcademico" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_EST_Estudiante" FromRole="LIS_Estudiante" ToRole="HIS_HistorialAcademico" />
+    <NavigationProperty Name="LIS_BecaEstudiante" Relationship="BAPLNModel.FK_LIS_BecaEstudiante_LIS_Estudiante" FromRole="LIS_Estudiante" ToRole="LIS_BecaEstudiante" />
+    <NavigationProperty Name="LIS_Instituciones" Relationship="BAPLNModel.FK_LIS_Estudiante_LIS_Instituciones" FromRole="LIS_Estudiante" ToRole="LIS_Instituciones" />
+    <NavigationProperty Name="LIS_Responsable" Relationship="BAPLNModel.REL_Estudiante_Responsable" FromRole="LIS_Estudiante" ToRole="LIS_Responsable" />
+  </EntityType>
+  <EntityType Name="LIS_Instituciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EmailContacto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HIS_HistorialAcademico" Relationship="BAPLNModel.FK_HIS_HistorialAcademico_LIS_Instituciones" FromRole="LIS_Instituciones" ToRole="HIS_HistorialAcademico" />
+    <NavigationProperty Name="LIS_Estudiante" Relationship="BAPLNModel.FK_LIS_Estudiante_LIS_Instituciones" FromRole="LIS_Instituciones" ToRole="LIS_Estudiante" />
+    <NavigationProperty Name="CAT_CursoLectivo" Relationship="BAPLNModel.REL_CursoLectivo_Institucion" FromRole="LIS_Instituciones" ToRole="CAT_CursoLectivo" />
+    <NavigationProperty Name="CAT_Materia" Relationship="BAPLNModel.REL_Materia_Institucion" FromRole="LIS_Instituciones" ToRole="CAT_Materia" />
+    <NavigationProperty Name="CAT_Nivel" Relationship="BAPLNModel.REL_Nivel_Institucion" FromRole="LIS_Instituciones" ToRole="CAT_Nivel" />
+    <NavigationProperty Name="CAT_Periodo" Relationship="BAPLNModel.REL_Periodo_Institucion" FromRole="LIS_Instituciones" ToRole="CAT_Periodo" />
+  </EntityType>
+  <EntityType Name="LIS_Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Puesto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CAT_Permiso" Relationship="BAPLNModel.REL_Usuario_Permiso" FromRole="LIS_Usuario" ToRole="CAT_Permiso" />
+  </EntityType>
+  <EntityType Name="vwHistorialAcademico">
+    <Key>
+      <PropertyRef Name="Consecutivo" />
+      <PropertyRef Name="IdEstudiante" />
+      <PropertyRef Name="idInstitucion" />
+      <PropertyRef Name="DesInstitucion" />
+      <PropertyRef Name="IdCursoLectivo" />
+      <PropertyRef Name="IdNivel" />
+      <PropertyRef Name="IdPeriodo" />
+      <PropertyRef Name="Materia" />
+      <PropertyRef Name="Calificacion" />
+    </Key>
+    <Property Name="Consecutivo" Type="Int32" Nullable="false" />
+    <Property Name="CarnetEstudiante" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+    <Property Name="NombreEstudiante" Type="String" MaxLength="352" FixedLength="false" Unicode="true" />
+    <Property Name="idInstitucion" Type="Int32" Nullable="false" />
+    <Property Name="DesInstitucion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IdCursoLectivo" Type="Int32" Nullable="false" />
+    <Property Name="CursoLectivo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IdNivel" Type="Int32" Nullable="false" />
+    <Property Name="DesNivel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IdPeriodo" Type="Int32" Nullable="false" />
+    <Property Name="DesPeriodo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Materia" Type="Int32" Nullable="false" />
+    <Property Name="DesMateria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Calificacion" Type="Int16" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CAT_Beca_CAT_TipoBeca">
+    <End Type="BAPLNModel.CAT_TipoBeca" Role="CAT_TipoBeca" Multiplicity="1" />
+    <End Type="BAPLNModel.CAT_Beca" Role="CAT_Beca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_TipoBeca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CAT_Beca">
+        <PropertyRef Name="Id_TipoBeca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_BecaEstudiante_CAT_Beca">
+    <End Type="BAPLNModel.CAT_Beca" Role="CAT_Beca" Multiplicity="1" />
+    <End Type="BAPLNModel.LIS_BecaEstudiante" Role="LIS_BecaEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Beca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_BecaEstudiante">
+        <PropertyRef Name="Id_Beca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_CUR_CursoLectivo">
+    <End Type="BAPLNModel.CAT_CursoLectivo" Role="CAT_CursoLectivo" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAcademico" Role="HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_CursoLectivo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_CursoLectivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_MAT_Materia">
+    <End Type="BAPLNModel.CAT_Materia" Role="CAT_Materia" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAcademico" Role="HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Materia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Materia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DON_Donadores_NAC_Nacionalidad">
+    <End Type="BAPLNModel.CAT_Nacionalidad" Role="CAT_Nacionalidad" Multiplicity="1" />
+    <End Type="BAPLNModel.LIS_Donador" Role="LIS_Donador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nacionalidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Donador">
+        <PropertyRef Name="Id_Nacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Estudiante_NAC_Nacionalidad">
+    <End Type="BAPLNModel.CAT_Nacionalidad" Role="CAT_Nacionalidad" Multiplicity="1" />
+    <End Type="BAPLNModel.LIS_Estudiante" Role="LIS_Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nacionalidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Estudiante">
+        <PropertyRef Name="Id_Nacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_NIV_Nivel">
+    <End Type="BAPLNModel.CAT_Nivel" Role="CAT_Nivel" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAcademico" Role="HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nivel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Nivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Donador_CAT_PeriodicidadPago">
+    <End Type="BAPLNModel.CAT_PeriodicidadPago" Role="CAT_PeriodicidadPago" Multiplicity="1" />
+    <End Type="BAPLNModel.LIS_Donador" Role="LIS_Donador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_PeriodicidadPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Donador">
+        <PropertyRef Name="Id_Periodicidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_PER_Periodo">
+    <End Type="BAPLNModel.CAT_Periodo" Role="CAT_Periodo" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAcademico" Role="HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Periodo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Periodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_EST_Estudiante">
+    <End Type="BAPLNModel.LIS_Estudiante" Role="LIS_Estudiante" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAcademico" Role="HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Estudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAcademico_LIS_Instituciones">
+    <End Type="BAPLNModel.LIS_Instituciones" Role="LIS_Instituciones" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAcademico" Role="HIS_HistorialAcademico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAcademico">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HIS_HistorialAportes_LIS_Donador">
+    <End Type="BAPLNModel.LIS_Donador" Role="LIS_Donador" Multiplicity="1" />
+    <End Type="BAPLNModel.HIS_HistorialAportes" Role="HIS_HistorialAportes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Donador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HIS_HistorialAportes">
+        <PropertyRef Name="Id_Donador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_AporteCuota_HIS_HistorialAportes">
+    <End Type="BAPLNModel.HIS_HistorialAportes" Role="HIS_HistorialAportes" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_AporteCuota" Role="LIS_AporteCuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HIS_HistorialAportes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_AporteCuota">
+        <PropertyRef Name="Id_Aporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_AporteCuota_LIS_CuotasBeca">
+    <End Type="BAPLNModel.LIS_CuotasBeca" Role="LIS_CuotasBeca" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_AporteCuota" Role="LIS_AporteCuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_CuotasBeca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_AporteCuota">
+        <PropertyRef Name="Id_Cuota" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_BecaEstudiante_LIS_Estudiante">
+    <End Type="BAPLNModel.LIS_Estudiante" Role="LIS_Estudiante" Multiplicity="1" />
+    <End Type="BAPLNModel.LIS_BecaEstudiante" Role="LIS_BecaEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Estudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_BecaEstudiante">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_CuotasBeca_LIS_BecaEstudiante">
+    <End Type="BAPLNModel.LIS_BecaEstudiante" Role="LIS_BecaEstudiante" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_CuotasBeca" Role="LIS_CuotasBeca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_BecaEstudiante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_CuotasBeca">
+        <PropertyRef Name="Id_BecaEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_CuotasBeca_LIS_Donador">
+    <End Type="BAPLNModel.LIS_Donador" Role="LIS_Donador" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_CuotasBeca" Role="LIS_CuotasBeca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Donador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_CuotasBeca">
+        <PropertyRef Name="Id_Donador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Estudiante_LIS_Instituciones">
+    <End Type="BAPLNModel.LIS_Instituciones" Role="LIS_Instituciones" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_Estudiante" Role="LIS_Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_Instituciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Estudiante">
+        <PropertyRef Name="Id_Institucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="REL_CursoLectivo_Institucion">
+    <End Type="BAPLNModel.CAT_CursoLectivo" Role="CAT_CursoLectivo" Multiplicity="*" />
+    <End Type="BAPLNModel.LIS_Instituciones" Role="LIS_Instituciones" Multiplicity="*" />
+  </Association>
+  <Association Name="REL_Materia_Institucion">
+    <End Type="BAPLNModel.CAT_Materia" Role="CAT_Materia" Multiplicity="*" />
+    <End Type="BAPLNModel.LIS_Instituciones" Role="LIS_Instituciones" Multiplicity="*" />
+  </Association>
+  <Association Name="REL_Nivel_Institucion">
+    <End Type="BAPLNModel.CAT_Nivel" Role="CAT_Nivel" Multiplicity="*" />
+    <End Type="BAPLNModel.LIS_Instituciones" Role="LIS_Instituciones" Multiplicity="*" />
+  </Association>
+  <Association Name="REL_Periodo_Institucion">
+    <End Type="BAPLNModel.CAT_Periodo" Role="CAT_Periodo" Multiplicity="*" />
+    <End Type="BAPLNModel.LIS_Instituciones" Role="LIS_Instituciones" Multiplicity="*" />
+  </Association>
+  <Association Name="REL_Usuario_Permiso">
+    <End Type="BAPLNModel.CAT_Permiso" Role="CAT_Permiso" Multiplicity="*" />
+    <End Type="BAPLNModel.LIS_Usuario" Role="LIS_Usuario" Multiplicity="*" />
+  </Association>
+  <EntityType Name="CAT_EstadoCivil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Activo" Type="Boolean" />
+    <NavigationProperty Name="LIS_Responsable" Relationship="BAPLNModel.FK_LIS_Responsable_CAT_EstadoCivil" FromRole="CAT_EstadoCivil" ToRole="LIS_Responsable" />
+  </EntityType>
+  <EntityType Name="CAT_TipoResponsable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LIS_Responsable" Relationship="BAPLNModel.FK_LIS_Responsable_CAT_TipoResponsable" FromRole="CAT_TipoResponsable" ToRole="LIS_Responsable" />
+  </EntityType>
+  <EntityType Name="LIS_Responsable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimerApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cedula" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Direccion" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trabajo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IngresoMensual" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Oficio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Escolaridad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Conocimientos" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Id_EstadoCivil" Type="Int32" />
+    <Property Name="Id_Nacionalidad" Type="Int32" />
+    <Property Name="Id_TipoResponsable" Type="Int32" />
+    <NavigationProperty Name="CAT_EstadoCivil" Relationship="BAPLNModel.FK_LIS_Responsable_CAT_EstadoCivil" FromRole="LIS_Responsable" ToRole="CAT_EstadoCivil" />
+    <NavigationProperty Name="CAT_Nacionalidad" Relationship="BAPLNModel.FK_LIS_Responsable_CAT_Nacionalidad" FromRole="LIS_Responsable" ToRole="CAT_Nacionalidad" />
+    <NavigationProperty Name="CAT_TipoResponsable" Relationship="BAPLNModel.FK_LIS_Responsable_CAT_TipoResponsable" FromRole="LIS_Responsable" ToRole="CAT_TipoResponsable" />
+    <NavigationProperty Name="LIS_Estudiante" Relationship="BAPLNModel.REL_Estudiante_Responsable" FromRole="LIS_Responsable" ToRole="LIS_Estudiante" />
+  </EntityType>
+  <Association Name="FK_LIS_Responsable_CAT_EstadoCivil">
+    <End Type="BAPLNModel.CAT_EstadoCivil" Role="CAT_EstadoCivil" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_Responsable" Role="LIS_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_EstadoCivil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Responsable">
+        <PropertyRef Name="Id_EstadoCivil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Responsable_CAT_Nacionalidad">
+    <End Type="BAPLNModel.CAT_Nacionalidad" Role="CAT_Nacionalidad" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_Responsable" Role="LIS_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_Nacionalidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Responsable">
+        <PropertyRef Name="Id_Nacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIS_Responsable_CAT_TipoResponsable">
+    <End Type="BAPLNModel.CAT_TipoResponsable" Role="CAT_TipoResponsable" Multiplicity="0..1" />
+    <End Type="BAPLNModel.LIS_Responsable" Role="LIS_Responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAT_TipoResponsable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LIS_Responsable">
+        <PropertyRef Name="Id_TipoResponsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="REL_Estudiante_Responsable">
+    <End Type="BAPLNModel.LIS_Estudiante" Role="LIS_Estudiante" Multiplicity="*" />
+    <End Type="BAPLNModel.LIS_Responsable" Role="LIS_Responsable" Multiplicity="*" />
+  </Association>
+</Schema>

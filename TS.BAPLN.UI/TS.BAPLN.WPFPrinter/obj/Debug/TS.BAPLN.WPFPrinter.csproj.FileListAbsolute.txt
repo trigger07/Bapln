@@ -1,0 +1,13 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\bin\Debug\TS.BAPLN.WPFPrinter.exe.config
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\bin\Debug\TS.BAPLN.WPFPrinter.exe
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\bin\Debug\TS.BAPLN.WPFPrinter.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter.csprojResolveAssemblyReference.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\MainWindow.baml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\MainWindow.g.cs
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\App.g.cs
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter_MarkupCompile.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter.g.resources
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter.Properties.Resources.resources
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter.csproj.GenerateResource.Cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter.exe
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.WPFPrinter\obj\Debug\TS.BAPLN.WPFPrinter.pdb

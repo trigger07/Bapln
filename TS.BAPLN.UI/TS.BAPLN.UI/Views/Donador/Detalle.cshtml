@@ -1,0 +1,77 @@
+﻿@model TS.BAPLN.DataEntities.DTO.DonadorDTO
+
+<table class="table table-striped">
+    <tr>
+        <td width="40%">
+            <strong>@Html.DisplayNameFor(modelModel => Model.Nombre):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.Nombre) @Html.DisplayFor(modelModel => Model.PrimerApellido) @Html.DisplayFor(modelModel => Model.SegundoApellido)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.MontoAporte):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.MontoAporte)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.Periodicidad):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.Periodicidad)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.Nacionalidad):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.Nacionalidad)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.TelefonoLocal):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.TelefonoLocal)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.TelefonoMovil):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.TelefonoMovil)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.Email):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.Email)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.FechaNacimiento):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.FechaNacimiento)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>@Html.DisplayNameFor(modelModel => Model.Activo):</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelModel => Model.Activo)
+        </td>
+    </tr>
+</table>
+

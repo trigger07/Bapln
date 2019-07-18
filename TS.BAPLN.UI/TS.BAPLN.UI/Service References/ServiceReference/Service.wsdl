@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53301/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53301/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53301/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TS.BAPLN.DataEntities.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_ObtenerEsudiantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEsudiantes" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerEsudiantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEsudiantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerEsudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEsudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerEsudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEsudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerNacionalidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNacionalidades" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerNacionalidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNacionalidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerTipoBecas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoBecas" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerTipoBecas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoBecasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerBecas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBecas" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerBecas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBecasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarBeca_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarBeca" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarBeca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarBecaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarBeca_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarBeca" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarBeca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarBecaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearBeca_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearBeca" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearBeca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearBecaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarBeca_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarBeca" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarBeca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarBecaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerBecaPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBecaPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerBecaPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBecaPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearBecaEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearBecaEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearBecaEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearBecaEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerBecasActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBecasActivas" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerBecasActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBecasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerEstudiantesAutocomplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstudiantesAutocomplete" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerEstudiantesAutocomplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstudiantesAutocompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerDonadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDonadores" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerDonadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDonadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerDonador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDonador" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerDonador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDonadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearDonador_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearDonador" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearDonador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearDonadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarDonador_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarDonador" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarDonador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarDonadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarDonador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarDonador" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarDonador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarDonadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarDonador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDonador" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarDonador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDonadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerPeriodicidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeriodicidades" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerPeriodicidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeriodicidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerInstituciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInstituciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerInstitucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInstitucion" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerInstitucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInstitucionResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ObtenerCatalogoMaterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoMaterias" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerCatalogoMaterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoMateriasResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="IService_ObtenerMaterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMaterias" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerMaterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMateriasResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ObtenerCatalogoPeriodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoPeriodos" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerCatalogoPeriodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoPeriodosResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="IService_ObtenerPeriodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeriodos" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerPeriodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeriodosResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ObtenerCatalogoNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerCatalogoNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoNivelesResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="IService_ObtenerNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivelesResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ObtenerCatalogoCursosLectivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoCursosLectivos" />
+  </wsdl:message>
+  <wsdl:message name="IService_ObtenerCatalogoCursosLectivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogoCursosLectivosResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ActualizarMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMateriaResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ActualizarPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPeriodoResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ActualizarNivel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNivel" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarNivel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNivelResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ActualizarCursoLectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCursoLectivo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarCursoLectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCursoLectivoResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_ActualizarInstitucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarInstitucion" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarInstitucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarInstitucionResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="IService_InactivarMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarMateriaResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_InactivarPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarPeriodoResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IService_InactivarNivel_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarNivel" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarNivel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarNivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarNivel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarNivel" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarNivel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarNivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarNivel_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarNivel" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarNivel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarNivelResponse" />
+  </wsdl:message>  
+  
+  <wsdl:message name="IService_InactivarCursoLectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarCursoLectivo" />
+  </wsdl:message>
+  <wsdl:message name="IService_InactivarCursoLectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarCursoLectivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarCursoLectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarCursoLectivo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActivarCursoLectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarCursoLectivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarCursoLectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCursoLectivo" />
+  </wsdl:message>
+  <wsdl:message name="IService_BorrarCursoLectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCursoLectivoResponse" />
+  </wsdl:message>
+
+  <wsdl:portType name="IService">
+    <wsdl:operation name="ObtenerEsudiantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerEsudiantes" message="tns:IService_ObtenerEsudiantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerEsudiantesResponse" message="tns:IService_ObtenerEsudiantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEsudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerEsudiante" message="tns:IService_ObtenerEsudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerEsudianteResponse" message="tns:IService_ObtenerEsudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearEstudiante" message="tns:IService_CrearEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearEstudianteResponse" message="tns:IService_CrearEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivarEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarEstudiante" message="tns:IService_InactivarEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarEstudianteResponse" message="tns:IService_InactivarEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarEstudiante" message="tns:IService_ActivarEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarEstudianteResponse" message="tns:IService_ActivarEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarEstudiante" message="tns:IService_ActualizarEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarEstudianteResponse" message="tns:IService_ActualizarEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNacionalidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerNacionalidades" message="tns:IService_ObtenerNacionalidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerNacionalidadesResponse" message="tns:IService_ObtenerNacionalidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoBecas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerTipoBecas" message="tns:IService_ObtenerTipoBecas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerTipoBecasResponse" message="tns:IService_ObtenerTipoBecas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBecas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerBecas" message="tns:IService_ObtenerBecas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerBecasResponse" message="tns:IService_ObtenerBecas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivarBeca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarBeca" message="tns:IService_InactivarBeca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarBecaResponse" message="tns:IService_InactivarBeca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarBeca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarBeca" message="tns:IService_ActivarBeca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarBecaResponse" message="tns:IService_ActivarBeca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearBeca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearBeca" message="tns:IService_CrearBeca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearBecaResponse" message="tns:IService_CrearBeca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarBeca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarBeca" message="tns:IService_ActualizarBeca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarBecaResponse" message="tns:IService_ActualizarBeca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBecaPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerBecaPorId" message="tns:IService_ObtenerBecaPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerBecaPorIdResponse" message="tns:IService_ObtenerBecaPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearBecaEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearBecaEstudiante" message="tns:IService_CrearBecaEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearBecaEstudianteResponse" message="tns:IService_CrearBecaEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBecasActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerBecasActivas" message="tns:IService_ObtenerBecasActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerBecasActivasResponse" message="tns:IService_ObtenerBecasActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstudiantesAutocomplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerEstudiantesAutocomplete" message="tns:IService_ObtenerEstudiantesAutocomplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerEstudiantesAutocompleteResponse" message="tns:IService_ObtenerEstudiantesAutocomplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDonadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerDonadores" message="tns:IService_ObtenerDonadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerDonadoresResponse" message="tns:IService_ObtenerDonadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDonador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerDonador" message="tns:IService_ObtenerDonador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerDonadorResponse" message="tns:IService_ObtenerDonador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearDonador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearDonador" message="tns:IService_CrearDonador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearDonadorResponse" message="tns:IService_CrearDonador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivarDonador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarDonador" message="tns:IService_InactivarDonador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarDonadorResponse" message="tns:IService_InactivarDonador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarDonador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarDonador" message="tns:IService_ActivarDonador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarDonadorResponse" message="tns:IService_ActivarDonador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDonador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarDonador" message="tns:IService_ActualizarDonador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarDonadorResponse" message="tns:IService_ActualizarDonador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPeriodicidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerPeriodicidades" message="tns:IService_ObtenerPeriodicidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerPeriodicidadesResponse" message="tns:IService_ObtenerPeriodicidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInstituciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerInstituciones" message="tns:IService_ObtenerInstituciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerInstitucionesResponse" message="tns:IService_ObtenerInstituciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEsudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerInstitucion" message="tns:IService_ObtenerInstitucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerInstitucionResponse" message="tns:IService_ObtenerInstitucion_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ObtenerCatalogoMaterias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoMaterias" message="tns:IService_ObtenerCatalogoMaterias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoMateriasResponse" message="tns:IService_ObtenerCatalogoMaterias_OutputMessage" />
+    </wsdl:operation>
+    
+    <wsdl:operation name="ObtenerMaterias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerMaterias" message="tns:IService_ObtenerMaterias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerMateriasResponse" message="tns:IService_ObtenerMaterias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarMateria" message="tns:IService_ActualizarMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarMateriaResponse" message="tns:IService_ActualizarMateria_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ObtenerCatalogoPeriodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoPeriodos" message="tns:IService_ObtenerCatalogoPeriodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoPeriodosResponse" message="tns:IService_ObtenerCatalogoPeriodos_OutputMessage" />
+    </wsdl:operation>
+    
+    <wsdl:operation name="ObtenerPeriodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerMaterias" message="tns:IService_ObtenerPeriodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerPeriodosResponse" message="tns:IService_ObtenerPeriodos_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarPeriodo" message="tns:IService_ActualizarPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarPeriodoResponse" message="tns:IService_ActualizarPeriodo_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ObtenerCatalogoNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoNiveles" message="tns:IService_ObtenerCatalogoNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoNivelesResponse" message="tns:IService_ObtenerCatalogoNiveles_OutputMessage" />
+    </wsdl:operation>    
+
+    <wsdl:operation name="ObtenerNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerNiveles" message="tns:IService_ObtenerNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerNivelesResponse" message="tns:IService_ObtenerNiveles_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarNivel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarNivel" message="tns:IService_ActualizarNivel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarNivelResponse" message="tns:IService_ActualizarNivel_OutputMessage" />
+    </wsdl:operation>    
+
+    <wsdl:operation name="ObtenerCatalogoCursosLectivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoCursosLectivos" message="tns:IService_ObtenerCatalogoCursosLectivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ObtenerCatalogoCursosLectivosResponse" message="tns:IService_ObtenerCatalogoCursosLectivos_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarCursoLectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarCursoLectivo" message="tns:IService_ActualizarCursoLectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarCursoLectivoResponse" message="tns:IService_ActualizarCursoLectivo_OutputMessage" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarInstitucion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarInstitucion" message="tns:IService_ActualizarInstitucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarInstitucionResponse" message="tns:IService_ActualizarInstitucion_OutputMessage" />
+    </wsdl:operation>
+    
+    <wsdl:operation name="InactivarMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarMateria" message="tns:IService_InactivarMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarMateriaResponse" message="tns:IService_InactivarMateria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarMateria" message="tns:IService_ActivarMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarMateriaResponse" message="tns:IService_ActivarMateria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BorrarMateria" message="tns:IService_BorrarMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BorrarMateriaResponse" message="tns:IService_BorrarMateria_OutputMessage" />
+    </wsdl:operation>
+    
+    <wsdl:operation name="InactivarPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarPeriodo" message="tns:IService_InactivarPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarPeriodoResponse" message="tns:IService_InactivarPeriodo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarPeriodo" message="tns:IService_ActivarPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarPeriodoResponse" message="tns:IService_ActivarPeriodo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BorrarPeriodo" message="tns:IService_BorrarPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BorrarPeriodoResponse" message="tns:IService_BorrarPeriodo_OutputMessage" />
+    </wsdl:operation>    
+    
+    <wsdl:operation name="InactivarNivel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarNivel" message="tns:IService_InactivarNivel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarNivelResponse" message="tns:IService_InactivarNivel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarNivel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarNivel" message="tns:IService_ActivarNivel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarNivelResponse" message="tns:IService_ActivarNivel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarNivel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BorrarNivel" message="tns:IService_BorrarNivel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BorrarNivelResponse" message="tns:IService_BorrarNivel_OutputMessage" />
+    </wsdl:operation>    
+    
+    <wsdl:operation name="InactivarCursoLectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InactivarCursoLectivo" message="tns:IService_InactivarCursoLectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InactivarCursoLectivoResponse" message="tns:IService_InactivarCursoLectivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarCursoLectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActivarCursoLectivo" message="tns:IService_ActivarCursoLectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivarCursoLectivoResponse" message="tns:IService_ActivarCursoLectivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCursoLectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BorrarCursoLectivo" message="tns:IService_BorrarCursoLectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BorrarCursoLectivoResponse" message="tns:IService_BorrarCursoLectivo_OutputMessage" />
+    </wsdl:operation>    
+
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerEsudiantes">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerEsudiantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEsudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerEsudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivarEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNacionalidades">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerNacionalidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoBecas">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerTipoBecas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBecas">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerBecas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivarBeca">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarBeca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarBeca">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarBeca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearBeca">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearBeca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarBeca">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarBeca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBecaPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerBecaPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearBecaEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearBecaEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBecasActivas">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerBecasActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstudiantesAutocomplete">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerEstudiantesAutocomplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDonadores">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerDonadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDonador">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerDonador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearDonador">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearDonador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivarDonador">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarDonador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarDonador">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarDonador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDonador">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarDonador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPeriodicidades">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerPeriodicidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInstituciones">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerInstituciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInstitucion">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerInstitucion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ObtenerCatalogoMaterias">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerCatalogoMaterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ObtenerMaterias">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerMaterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>    
+
+    <wsdl:operation name="ObtenerCatalogoPeriodos">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerCatalogoPeriodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ObtenerNiveles">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerNiveles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarNivel">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarNivel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ObtenerCatalogoCursosLectivos">
+      <soap:operation soapAction="http://tempuri.org/IService/ObtenerCatalogoCursosLectivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarCursoLectivo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarCursoLectivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ActualizarInstitucion">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarInstitucion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="InactivarMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/BorrarMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="InactivarPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IService/BorrarPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="InactivarNivel">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarNivel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarNivel">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarNivel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarNivel">
+      <soap:operation soapAction="http://tempuri.org/IService/BorrarNivel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>    
+    
+    <wsdl:operation name="InactivarCursoLectivo">
+      <soap:operation soapAction="http://tempuri.org/IService/InactivarCursoLectivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarCursoLectivo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActivarCursoLectivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCursoLectivo">
+      <soap:operation soapAction="http://tempuri.org/IService/BorrarCursoLectivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>    
+
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:53301/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

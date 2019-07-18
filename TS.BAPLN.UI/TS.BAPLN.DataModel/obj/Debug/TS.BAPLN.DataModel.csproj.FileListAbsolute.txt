@@ -1,0 +1,12 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\TS.BAPLN.DataModel.dll.config
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\TS.BAPLN.DataModel.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\TS.BAPLN.DataModel.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\EntityFramework.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\TS.BAPLN.DataEntities.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\TS.BAPLN.DataEntities.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\EntityFramework.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\obj\Debug\TS.BAPLN.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\obj\Debug\TS.BAPLN.DataModel.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataModel\obj\Debug\TS.BAPLN.DataModel.pdb

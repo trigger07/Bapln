@@ -1,0 +1,7 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\bin\Debug\TS.BAPLN.DatabaseStructure.dacpac
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\obj\Debug\Model.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\obj\Debug\refactor.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\obj\Debug\postdeploy.sql
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\obj\Debug\predeploy.sql
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\obj\Debug\TS.BAPLN.DatabaseStructure.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DatabaseStructure\obj\Debug\TS.BAPLN.DatabaseStructure.pdb

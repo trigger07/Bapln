@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BAPLNModelStoreContainer" CdmEntityContainer="BAPLNEntities">
+    <EntitySetMapping Name="CAT_Beca">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Beca">
+        <MappingFragment StoreEntitySet="CAT_Beca">
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="CantidadCuotas" ColumnName="CantidadCuotas" />
+          <ScalarProperty Name="MontoCuota" ColumnName="MontoCuota" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+          <ScalarProperty Name="Id_TipoBeca" ColumnName="Id_TipoBeca" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_CursoLectivo">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_CursoLectivo">
+        <MappingFragment StoreEntitySet="CAT_CursoLectivo">
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_Estado">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Estado">
+        <MappingFragment StoreEntitySet="CAT_Estado">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_Materia">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Materia">
+        <MappingFragment StoreEntitySet="CAT_Materia">
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_Nacionalidad">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Nacionalidad">
+        <MappingFragment StoreEntitySet="CAT_Nacionalidad">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_Nivel">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Nivel">
+        <MappingFragment StoreEntitySet="CAT_Nivel">
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_PeriodicidadPago">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_PeriodicidadPago">
+        <MappingFragment StoreEntitySet="CAT_PeriodicidadPago">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_Periodo">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Periodo">
+        <MappingFragment StoreEntitySet="CAT_Periodo">
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_Permiso">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_Permiso">
+        <MappingFragment StoreEntitySet="CAT_Permiso">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id_Permiso" ColumnName="Id_Permiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_TipoBeca">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_TipoBeca">
+        <MappingFragment StoreEntitySet="CAT_TipoBeca">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HIS_HistorialAcademico">
+      <EntityTypeMapping TypeName="BAPLNModel.HIS_HistorialAcademico">
+        <MappingFragment StoreEntitySet="HIS_HistorialAcademico">
+          <ScalarProperty Name="Id_Institucion" ColumnName="Id_Institucion" />
+          <ScalarProperty Name="Id_CursoLectivo" ColumnName="Id_CursoLectivo" />
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+          <ScalarProperty Name="Id_Nivel" ColumnName="Id_Nivel" />
+          <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
+          <ScalarProperty Name="Id_Materia" ColumnName="Id_Materia" />
+          <ScalarProperty Name="Id_Estudiante" ColumnName="Id_Estudiante" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HIS_HistorialAportes">
+      <EntityTypeMapping TypeName="BAPLNModel.HIS_HistorialAportes">
+        <MappingFragment StoreEntitySet="HIS_HistorialAportes">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="Aprobada" ColumnName="Aprobada" />
+          <ScalarProperty Name="Anulada" ColumnName="Anulada" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Id_Donador" ColumnName="Id_Donador" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_AporteCuota">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_AporteCuota">
+        <MappingFragment StoreEntitySet="LIS_AporteCuota">
+          <ScalarProperty Name="Id_Aporte" ColumnName="Id_Aporte" />
+          <ScalarProperty Name="Id_Cuota" ColumnName="Id_Cuota" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_BecaEstudiante">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_BecaEstudiante">
+        <MappingFragment StoreEntitySet="LIS_BecaEstudiante">
+          <ScalarProperty Name="CantidadCuotas" ColumnName="CantidadCuotas" />
+          <ScalarProperty Name="MontoCuota" ColumnName="MontoCuota" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="Id_Beca" ColumnName="Id_Beca" />
+          <ScalarProperty Name="Id_Estudiante" ColumnName="Id_Estudiante" />
+          <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_CuotasBeca">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_CuotasBeca">
+        <MappingFragment StoreEntitySet="LIS_CuotasBeca">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Anulada" ColumnName="Anulada" />
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
+          <ScalarProperty Name="Pendiente" ColumnName="Pendiente" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id_Donador" ColumnName="Id_Donador" />
+          <ScalarProperty Name="Id_BecaEstudiante" ColumnName="Id_BecaEstudiante" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_Donador">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_Donador">
+        <MappingFragment StoreEntitySet="LIS_Donador">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Id_Nacionalidad" ColumnName="Id_Nacionalidad" />
+          <ScalarProperty Name="MontoAporte" ColumnName="MontoAporte" />
+          <ScalarProperty Name="Id_Periodicidad" ColumnName="Id_Periodicidad" />
+          <ScalarProperty Name="TelefonoMovil" ColumnName="TelefonoMovil" />
+          <ScalarProperty Name="TelefonoLocal" ColumnName="TelefonoLocal" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_Estudiante">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_Estudiante">
+        <MappingFragment StoreEntitySet="LIS_Estudiante">
+          <ScalarProperty Name="Id_Institucion" ColumnName="Id_Institucion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Id_Nacionalidad" ColumnName="Id_Nacionalidad" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Fotografia" ColumnName="Fotografia" />
+          <ScalarProperty Name="TelefonoMovil" ColumnName="TelefonoMovil" />
+          <ScalarProperty Name="TelefonoLocal" ColumnName="TelefonoLocal" />
+          <ScalarProperty Name="Madre" ColumnName="Madre" />
+          <ScalarProperty Name="Padre" ColumnName="Padre" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Carne" ColumnName="Carne" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_Instituciones">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_Instituciones">
+        <MappingFragment StoreEntitySet="LIS_Instituciones">
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="EmailContacto" ColumnName="EmailContacto" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_Usuario">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_Usuario">
+        <MappingFragment StoreEntitySet="LIS_Usuario">
+          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwHistorialAcademicoes">
+      <EntityTypeMapping TypeName="BAPLNModel.vwHistorialAcademico">
+        <MappingFragment StoreEntitySet="vwHistorialAcademico">
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="DesMateria" ColumnName="DesMateria" />
+          <ScalarProperty Name="Materia" ColumnName="Materia" />
+          <ScalarProperty Name="DesPeriodo" ColumnName="DesPeriodo" />
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="DesNivel" ColumnName="DesNivel" />
+          <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+          <ScalarProperty Name="CursoLectivo" ColumnName="CursoLectivo" />
+          <ScalarProperty Name="IdCursoLectivo" ColumnName="IdCursoLectivo" />
+          <ScalarProperty Name="DesInstitucion" ColumnName="DesInstitucion" />
+          <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+          <ScalarProperty Name="NombreEstudiante" ColumnName="NombreEstudiante" />
+          <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+          <ScalarProperty Name="CarnetEstudiante" ColumnName="CarnetEstudiante" />
+          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="REL_CursoLectivo_Institucion" TypeName="BAPLNModel.REL_CursoLectivo_Institucion" StoreEntitySet="REL_CursoLectivo_Institucion">
+      <EndProperty Name="LIS_Instituciones">
+        <ScalarProperty Name="Id" ColumnName="IdInstitucion" />
+      </EndProperty>
+      <EndProperty Name="CAT_CursoLectivo">
+        <ScalarProperty Name="Id" ColumnName="IdCursoLectivo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="REL_Materia_Institucion" TypeName="BAPLNModel.REL_Materia_Institucion" StoreEntitySet="REL_Materia_Institucion">
+      <EndProperty Name="LIS_Instituciones">
+        <ScalarProperty Name="Id" ColumnName="Id_Institucion" />
+      </EndProperty>
+      <EndProperty Name="CAT_Materia">
+        <ScalarProperty Name="Id" ColumnName="Id_Materia" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="REL_Nivel_Institucion" TypeName="BAPLNModel.REL_Nivel_Institucion" StoreEntitySet="REL_Nivel_Institucion">
+      <EndProperty Name="LIS_Instituciones">
+        <ScalarProperty Name="Id" ColumnName="Id_Institucion" />
+      </EndProperty>
+      <EndProperty Name="CAT_Nivel">
+        <ScalarProperty Name="Id" ColumnName="Id_Nivel" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="REL_Periodo_Institucion" TypeName="BAPLNModel.REL_Periodo_Institucion" StoreEntitySet="REL_Periodo_Institucion">
+      <EndProperty Name="LIS_Instituciones">
+        <ScalarProperty Name="Id" ColumnName="Id_Institucion" />
+      </EndProperty>
+      <EndProperty Name="CAT_Periodo">
+        <ScalarProperty Name="Id" ColumnName="Id_Periodo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="REL_Usuario_Permiso" TypeName="BAPLNModel.REL_Usuario_Permiso" StoreEntitySet="REL_Usuario_Permiso">
+      <EndProperty Name="LIS_Usuario">
+        <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+      </EndProperty>
+      <EndProperty Name="CAT_Permiso">
+        <ScalarProperty Name="Id_Permiso" ColumnName="Id_Permiso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_CrearExpedienteAcademico" FunctionName="BAPLNModel.Store.sp_CrearExpedienteAcademico" />
+    <EntitySetMapping Name="CAT_EstadoCivil">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_EstadoCivil">
+        <MappingFragment StoreEntitySet="CAT_EstadoCivil">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAT_TipoResponsable">
+      <EntityTypeMapping TypeName="BAPLNModel.CAT_TipoResponsable">
+        <MappingFragment StoreEntitySet="CAT_TipoResponsable">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_Responsable">
+      <EntityTypeMapping TypeName="BAPLNModel.LIS_Responsable">
+        <MappingFragment StoreEntitySet="LIS_Responsable">
+          <ScalarProperty Name="Id_TipoResponsable" ColumnName="Id_TipoResponsable" />
+          <ScalarProperty Name="Id_Nacionalidad" ColumnName="Id_Nacionalidad" />
+          <ScalarProperty Name="Id_EstadoCivil" ColumnName="Id_EstadoCivil" />
+          <ScalarProperty Name="Conocimientos" ColumnName="Conocimientos" />
+          <ScalarProperty Name="Escolaridad" ColumnName="Escolaridad" />
+          <ScalarProperty Name="Oficio" ColumnName="Oficio" />
+          <ScalarProperty Name="IngresoMensual" ColumnName="IngresoMensual" />
+          <ScalarProperty Name="Trabajo" ColumnName="Trabajo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="REL_Estudiante_Responsable" TypeName="BAPLNModel.REL_Estudiante_Responsable" StoreEntitySet="REL_Estudiante_Responsable">
+      <EndProperty Name="LIS_Responsable">
+        <ScalarProperty Name="Id" ColumnName="Id_Responsable" />
+      </EndProperty>
+      <EndProperty Name="LIS_Estudiante">
+        <ScalarProperty Name="Id" ColumnName="Id_Estudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

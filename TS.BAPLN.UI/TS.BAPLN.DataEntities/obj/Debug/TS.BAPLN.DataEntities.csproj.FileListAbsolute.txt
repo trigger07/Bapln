@@ -1,0 +1,10 @@
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\TS.BAPLN.DataEntities.dll.config
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\TS.BAPLN.DataEntities.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\TS.BAPLN.DataEntities.pdb
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\EntityFramework.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\EntityFramework.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\obj\Debug\TS.BAPLN.DataEntities.csprojResolveAssemblyReference.cache
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\obj\Debug\TS.BAPLN.DataEntities.dll
+C:\Users\gt19813\Documents\Personal\BAPLN\Bapln\TS.BAPLN.UI\TS.BAPLN.DataEntities\obj\Debug\TS.BAPLN.DataEntities.pdb

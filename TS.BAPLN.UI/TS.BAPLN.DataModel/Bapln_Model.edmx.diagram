@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a3c62c32f178491b99264e338afc1b9b" Name="Diagram1">
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Beca" Width="1.5" PointX="8.25" PointY="12.375" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_CursoLectivo" Width="1.5" PointX="3" PointY="12.625" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Estado" Width="1.5" PointX="10.75" PointY="14.5" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Materia" Width="1.5" PointX="3" PointY="15.125" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Nacionalidad" Width="1.5" PointX="6" PointY="3.875" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Nivel" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_PeriodicidadPago" Width="1.5" PointX="8.25" PointY="3.375" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Periodo" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_Permiso" Width="1.5" PointX="10.75" PointY="11.875" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_TipoBeca" Width="1.5" PointX="6" PointY="13" />
+        <EntityTypeShape EntityType="BAPLNModel.HIS_HistorialAcademico" Width="1.5" PointX="5.25" PointY="7" />
+        <EntityTypeShape EntityType="BAPLNModel.HIS_HistorialAportes" Width="1.5" PointX="12.75" PointY="3.375" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_AporteCuota" Width="1.5" PointX="15" PointY="7.75" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_BecaEstudiante" Width="1.5" PointX="10.5" PointY="7.125" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_CuotasBeca" Width="1.5" PointX="12.75" PointY="7" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_Donador" Width="1.5" PointX="10.5" PointY="0.75" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_Estudiante" Width="1.5" PointX="8.25" PointY="6.25" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_Instituciones" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_Usuario" Width="1.5" PointX="13" PointY="11.625" />
+        <EntityTypeShape EntityType="BAPLNModel.vwHistorialAcademico" Width="1.5" PointX="12.75" PointY="14.5" />
+        <AssociationConnector Association="BAPLNModel.FK_CAT_Beca_CAT_TipoBeca" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_BecaEstudiante_CAT_Beca" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAcademico_CUR_CursoLectivo" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAcademico_MAT_Materia" />
+        <AssociationConnector Association="BAPLNModel.FK_DON_Donadores_NAC_Nacionalidad" />
+        <AssociationConnector Association="BAPLNModel.FK_EST_Estudiante_NAC_Nacionalidad" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAcademico_NIV_Nivel" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_Donador_CAT_PeriodicidadPago" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAcademico_PER_Periodo" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAcademico_EST_Estudiante" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAcademico_LIS_Instituciones" />
+        <AssociationConnector Association="BAPLNModel.FK_HIS_HistorialAportes_LIS_Donador" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_AporteCuota_HIS_HistorialAportes" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_AporteCuota_LIS_CuotasBeca" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_BecaEstudiante_LIS_Estudiante" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_CuotasBeca_LIS_BecaEstudiante" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_CuotasBeca_LIS_Donador" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_Estudiante_LIS_Instituciones" />
+        <AssociationConnector Association="BAPLNModel.REL_CursoLectivo_Institucion" />
+        <AssociationConnector Association="BAPLNModel.REL_Materia_Institucion" />
+        <AssociationConnector Association="BAPLNModel.REL_Nivel_Institucion" />
+        <AssociationConnector Association="BAPLNModel.REL_Periodo_Institucion" />
+        <AssociationConnector Association="BAPLNModel.REL_Usuario_Permiso" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_EstadoCivil" Width="1.5" PointX="13.25" PointY="0.75" />
+        <EntityTypeShape EntityType="BAPLNModel.CAT_TipoResponsable" Width="1.5" PointX="13.25" PointY="20.25" />
+        <EntityTypeShape EntityType="BAPLNModel.LIS_Responsable" Width="1.5" PointX="15.5" PointY="1.375" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_Responsable_CAT_EstadoCivil" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_Responsable_CAT_Nacionalidad" />
+        <AssociationConnector Association="BAPLNModel.FK_LIS_Responsable_CAT_TipoResponsable" />
+        <AssociationConnector Association="BAPLNModel.REL_Estudiante_Responsable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

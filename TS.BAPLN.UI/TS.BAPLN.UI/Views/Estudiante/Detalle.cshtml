@@ -1,0 +1,117 @@
+﻿@model TS.BAPLN.DataEntities.DTO.EstudianteDTO
+
+<table>
+    <tr>
+        <td>
+            @if (Model.Fotografia != null && Model.Fotografia != "")
+            { 
+            <img src="~/Fotos/@Model.Fotografia" alt="foto" style="max-height:250px; max-height:250px;"/>
+            }
+            else
+            {
+            <img src="~/Fotos/Default.png" alt="foto" style="max-height:250px; max-height:250px;"/>
+            }
+        </td>
+        <td>
+            <table class="table table-striped">
+                <tr>
+                    <td width="40%">
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Carne):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Carne)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Nombre):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Nombre) @Html.DisplayFor(modelModel => Model.PrimerApellido) @Html.DisplayFor(modelModel => Model.SegundoApellido)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Cedula):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Cedula)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Nacionalidad):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Nacionalidad)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Padre):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Padre)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Madre):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Madre)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.TelefonoLocal):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.TelefonoLocal)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.TelefonoMovil):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.TelefonoMovil)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Email):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Direccion):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Direccion)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Fecha_Nacimiento):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Fecha_Nacimiento)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayNameFor(modelModel => Model.Activo):</strong>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Activo)
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
